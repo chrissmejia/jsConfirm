@@ -1,6 +1,5 @@
 
 
-
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
@@ -9,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; jsConfirm 0.1 documentation</title>
+  <title>Autogenerating JS &mdash; jsConfirm 0.1 documentation</title>
   
 
   
@@ -31,7 +30,8 @@
   
 
   
-    <link rel="top" title="jsConfirm 0.1 documentation" href="index.html"/> 
+    <link rel="top" title="jsConfirm 0.1 documentation" href="index.html"/>
+        <link rel="prev" title="Autogenerating CSS" href="compass.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -80,9 +80,13 @@
           
             
             
-                <ul>
+                <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="compass.html">Autogenerating CSS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="grunt.html">Autogenerating JS</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Autogenerating JS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#quickstart">Quickstart</a></li>
+</ul>
+</li>
 </ul>
 
             
@@ -113,9 +117,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li></li>
+    <li>Autogenerating JS</li>
       <li class="wy-breadcrumbs-aside">
         
+          
+            <a href="_sources/grunt.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -125,17 +131,38 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="section" id="autogenerating-js">
+<h1>Autogenerating JS<a class="headerlink" href="#autogenerating-js" title="Permalink to this headline">¶</a></h1>
+<p>We use Grunt to automatize, test and produce quality JS</p>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://nodejs.org">NodeJS</a></li>
+<li>Grunt <code class="docutils literal"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">-g</span> <span class="pre">grunt-cli</span></code></li>
+</ul>
+</div>
+<div class="section" id="quickstart">
+<h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Go to JS repository folder <code class="docutils literal"><span class="pre">source</span></code></li>
+<li>Run <code class="docutils literal"><span class="pre">npm</span> <span class="pre">install</span></code> (only the first time)</li>
+<li>Run <code class="docutils literal"><span class="pre">grunt</span></code></li>
+</ul>
+<p>And that&#8217;s it, grunt will run JSHint tests, compress, minify and place your JS properly.</p>
+</div>
 </div>
 
 
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="compass.html" class="btn btn-neutral" title="Autogenerating CSS" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
