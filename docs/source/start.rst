@@ -35,3 +35,5 @@ Every time
 * Activate virtualenv ``source ~/.virtualenvs/jsConfirm/bin/activate``
 * Move to the project folder (manage.py should be there)
 * Activate virtualenv ``python manage.py runserver``
+
+PS: Your application should be responding for static files at: ``http://127.0.0.1/seoshop/jsConfirm/``

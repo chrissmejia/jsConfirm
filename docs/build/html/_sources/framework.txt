@@ -2,7 +2,7 @@
 Framework
 ########################
 
-This is a light framework coded for this test
+This is a light reusable framework coded for this test.
 
 ============
 The grid
