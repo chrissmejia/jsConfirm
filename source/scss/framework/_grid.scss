@@ -1,0 +1,50 @@
+.column, .columns {
+    position: relative;
+    padding-left: 0.94rem;
+    padding-right: 0.94rem;
+    float: left;
+}
+
+.row {
+    width: 100%;
+    max-width: 62.5rem;
+    clear: both;
+}
+
+@for $i from 1 through $grid-columns {
+    .small-#{$i} {
+        width: ($i / $grid-columns) * 100%;
+    }
+}
+
+@media #{$medium-up} { 
+    @for $i from 1 through $grid-columns {
+        .medium-#{$i} {
+            width: ($i / $grid-columns) * 100%;
+        }
+    }
+}
+
+@media #{$large-up} {
+    @for $i from 1 through $grid-columns {
+        .large-#{$i} {
+            width: ($i / $grid-columns) * 100%;
+        }
+    }
+}
+
+@media #{$xlarge-up} {
+    @for $i from 1 through $grid-columns {
+        .xlarge-#{$i} {
+            width: ($i / $grid-columns) * 100%;
+        }
+    }
+}
+
+@media #{$xxlarge-up} {
+    @for $i from 1 through $grid-columns {
+        .xxlarge-#{$i} {
+            width: ($i / $grid-columns) * 100%;
+        }
+    }
+}
