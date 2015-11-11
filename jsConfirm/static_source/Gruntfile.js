@@ -4,7 +4,7 @@ module.exports = function(grunt) {
     // URI paths for our tasks to use.
     grunt.uri = './';
     grunt.folder = 'js/'
-    grunt.uriDistBase = '../public/';
+    grunt.uriDistBase = '../static/';
     grunt.uriDist = grunt.uriDistBase + grunt.folder;
     grunt.uriSrc = grunt.uri + grunt.folder;
     grunt.uriTask = grunt.uri + 'tasks/';
