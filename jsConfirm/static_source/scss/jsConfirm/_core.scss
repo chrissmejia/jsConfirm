@@ -42,10 +42,9 @@ SOFTWARE.
 }
 
 #jsConfirm {
-    position: relative;	
+    position: absolute;	
     width: 24.8rem;
     top: -30rem;
-    margin: 0 auto;
     background: $white;
     z-index: 100000000000;
     border: 0.1rem solid $window-border-color;

@@ -29,6 +29,11 @@ var jsConfirm = {
 jsConfirm.init = function (className, callback) {
     "use strict";
 
+    // Moving to start position
+    var modalWindow = document.getElementById("jsConfirm"); // DOM object
+    jsConfirm._startPosition(modalWindow);
+
+    // Events
     document.body.onclick = function(e) {
         e =e || window.event;
         var target = e.target || e.srcElement;
@@ -63,17 +68,63 @@ jsConfirm._addClass = function (d, className) {
     d.className = d.className + " " + className; // adding new class name
 };
 
+jsConfirm._windowWidth = function () {
+    "use strict";
+
+    return Math.max(document.documentElement.clientWidth, window.innerWidth || 0); // Window inner width
+};
+
+jsConfirm._windowHeight = function () {
+    "use strict";
+
+    return Math.max(document.documentElement.clientHeight, window.innerHeight || 0); // Window inner height
+};
+
+jsConfirm._modalWidth = function (d) {
+    "use strict";
+
+    return parseInt(window.getComputedStyle(d).width, 10); // modal width
+};
+
+jsConfirm._modalHeight = function (d) {
+    "use strict";
+
+    return parseInt(window.getComputedStyle(d).height, 10); // modal width
+};
+
+jsConfirm._center = function (d) {
+    "use strict";
+    
+    var windowWidth = jsConfirm._windowWidth();
+    var dWidth = jsConfirm._modalWidth(d);
+    d.style.left = ((windowWidth - dWidth) / 2) + "px"; // Place at center
+};
+
+jsConfirm._vCenter = function (d) {
+    "use strict";
+    
+    var windowHeight = jsConfirm._windowHeight(); // Window inner height
+    var dHeight = parseInt(window.getComputedStyle(d).height, 10);
+    d.style.top = ((windowHeight - dHeight) / 2) + "px"; // Place at vcenter
+};
+
+jsConfirm._startPosition = function (d) {
+    "use strict";
+    
+    jsConfirm._center(d);
+
+    d.style.top = "-" + jsConfirm._modalHeight(d) + "px";
+
+};
+
 jsConfirm._show = function () {
     "use strict";
 
     var background = document.getElementById("jsConfirmBackground"); // DOM object
     jsConfirm._addClass(background, "show");
 
-    var windowHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0); // Window inner height
     var modalWindow = document.getElementById("jsConfirm"); // DOM object
-    var modalWindowHeight = parseInt(window.getComputedStyle(modalWindow).height, 10);
-    modalWindow.style.top = ((windowHeight - modalWindowHeight) / 2) + "px"; // Place at vcenter
-    console.log(modalWindowHeight);
+    jsConfirm._vCenter(modalWindow);
 };
 
 document.addEventListener("DOMContentLoaded", function() {

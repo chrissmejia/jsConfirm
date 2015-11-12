@@ -64,10 +64,9 @@ SOFTWARE.
 
 /* line 44, ../../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirm {
-  position: relative;
+  position: absolute;
   width: 24.8rem;
   top: -30rem;
-  margin: 0 auto;
   background: #fff;
   z-index: 100000000000;
   border: 0.1rem solid #263545;
@@ -75,11 +74,11 @@ SOFTWARE.
   -webkit-border-radius: 0.2rem;
   border-radius: 0.2rem;
 }
-/* line 54, ../../../static_source/scss/jsConfirm/_core.scss */
+/* line 53, ../../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirm .title {
   padding: 1.2rem 2rem;
 }
-/* line 58, ../../../static_source/scss/jsConfirm/_core.scss */
+/* line 57, ../../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirm .description {
   color: #494C4C;
   padding: 3rem 0;
@@ -87,19 +86,19 @@ SOFTWARE.
   border-top: 0.1rem solid #C4CACC;
   border-bottom: 0.1rem solid #C4CACC;
 }
-/* line 65, ../../../static_source/scss/jsConfirm/_core.scss */
+/* line 64, ../../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirm .description span {
   display: inline-block;
   font-family: "Proxima Nova Semibold";
 }
-/* line 72, ../../../static_source/scss/jsConfirm/_core.scss */
+/* line 71, ../../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirm .buttons a {
   width: 50%;
   display: inline-block;
   font-size: 0.875rem;
   color: #494C4C;
 }
-/* line 79, ../../../static_source/scss/jsConfirm/_core.scss */
+/* line 78, ../../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirm .buttons #jsConfirmProceed {
   color: #E34F4F;
   border-left: 0.1rem solid #C4CACC;
