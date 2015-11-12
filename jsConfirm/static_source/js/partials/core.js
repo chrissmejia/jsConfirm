@@ -33,12 +33,12 @@ jsConfirm.init = function (className, callback) {
         e =e || window.event;
         var target = e.target || e.srcElement;
 
-        // hear only for a elements
+        // Hear only for a elements
         if (target.nodeName !== 'A') {
             return;
         }
         
-        // hear only for the set it className
+        // Hear only for the set it className
         var re = new RegExp("(?:^| )" + className + "(?:$| )", 'g');
         if (!target.className.match(re)) {
             return;
