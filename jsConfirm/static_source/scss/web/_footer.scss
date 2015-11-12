@@ -1,0 +1,16 @@
+footer {
+    background: rgba(0,0,0,0.5);
+    color: $clear-gray;
+    font-size: 0.8rem;
+    padding: 0.3rem 0 0.6rem 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    .logo {
+        @include import-image('logo.svg', 5rem, 1.3rem, 96%);
+        position: relative;
+        top: 0.4rem;
+    }
+}
