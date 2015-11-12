@@ -8,8 +8,17 @@
 .row {
     width: 100%;
     max-width: 62.5rem;
-    clear: both;
     margin: 0 auto;
+
+    .row {
+        margin: 0 -0.94rem;
+    }
+
+    :after {
+        clear: both;
+        content: " ";
+        display: table;
+    }
 }
 
 @for $i from 1 through $grid-columns {

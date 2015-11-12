@@ -22,10 +22,86 @@
 // SOFTWARE.                                                                              //
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-// @require framework/framework
+#gallery {
+    padding: 4rem 0;
+    background: $gallery-color;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 
-@import "settings";
-@import "header";
-@import "footer";
-@import "index";
-@import "gallery";
+    .picture {
+        background: $white;
+
+        margin: 1rem 0.2rem;
+    
+        img {
+            width: 100%;
+            padding: 0.2rem 0.2rem 0 0.2rem;
+        }
+
+        .description {
+            margin: 1.5rem 0;
+        }
+
+        .buttons {
+            padding: 0;
+
+            a {
+                width: 100%;
+			    text-align: center;
+			    display: block;
+			    padding: 0.4rem 0;
+            }
+        }
+    }
+
+    $heart-width: 1.25rem;
+    $heart-height: 1.125rem;
+
+    $heart-width-half: $heart-width / 2;
+	
+	.heart {
+	    position: relative;
+	    width: $heart-width;
+	    height: $heart-height;
+	    display: inline-block;
+
+    	&:before,
+		&:after {
+		    position: absolute;
+		    content: "";
+		    left: $heart-width-half ;
+		    top: 0;
+		    width: $heart-width-half;
+		    height: $heart-height * 0.9;
+		    background: red;
+		    -moz-border-radius: $heart-width-half  $heart-width-half  0 0;
+		    border-radius: $heart-width-half  $heart-width-half  0 0;
+		    -webkit-transform: rotate(-45deg);
+		       -moz-transform: rotate(-45deg);
+		        -ms-transform: rotate(-45deg);
+		         -o-transform: rotate(-45deg);
+		            transform: rotate(-45deg);
+		    -webkit-transform-origin: 0 100%;
+		       -moz-transform-origin: 0 100%;
+		        -ms-transform-origin: 0 100%;
+		         -o-transform-origin: 0 100%;
+		            transform-origin: 0 100%;
+		}
+
+		&:after {
+		    left: 0;
+		    -webkit-transform: rotate(45deg);
+		       -moz-transform: rotate(45deg);
+		        -ms-transform: rotate(45deg);
+		         -o-transform: rotate(45deg);
+		            transform: rotate(45deg);
+		    -webkit-transform-origin: 100% 100%;
+		       -moz-transform-origin: 100% 100%;
+		        -ms-transform-origin: 100% 100%;
+		         -o-transform-origin: 100% 100%;
+		            transform-origin :100% 100%;
+		}
+	}
+						
+}
