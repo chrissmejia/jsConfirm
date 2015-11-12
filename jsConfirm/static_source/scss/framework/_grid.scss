@@ -9,6 +9,7 @@
     width: 100%;
     max-width: 62.5rem;
     clear: both;
+    margin: 0 auto;
 }
 
 @for $i from 1 through $grid-columns {

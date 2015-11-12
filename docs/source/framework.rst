@@ -42,3 +42,24 @@ To make the life easier, the media queries are already set for you, and can be c
 
    @media #{$xxlarge-up} { }
    @media #{$xxlarge-only} { }
+
+================
+Position Helpers
+================
+
+Positioning text of objects it's a regular task than can be automaticed using helpers, in this way your css it's going to be smaller.
+
+-------------
+Floating
+-------------
+
+* Right ``right``
+* Left ``left``
+
+-------------
+Text position
+-------------
+
+* Left ``text-left``
+* Center ``text-center``
+* Right ``text-right``
