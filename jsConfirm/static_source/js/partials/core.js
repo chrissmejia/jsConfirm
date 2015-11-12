@@ -45,7 +45,38 @@ jsConfirm.init = function (className, callback) {
         }
 
         callback(target);
+        jsConfirm._show();
     };
+};
+
+jsConfirm._removeClass = function (d, className) {
+    "use strict";
+
+    className = " " + className; //must keep a space before class name
+    d.className = d.className.replace(className,""); // first remove the class name if that already exists
+};
+
+jsConfirm._addClass = function (d, className) {
+    "use strict";
+    
+    jsConfirm._removeClass(d, className); // first remove the class name if that already exists
+    d.className = d.className + " " + className; // adding new class name
+};
+
+jsConfirm._vCenter = function (d) {
+    var windowHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0); // Window inner height
+    var dHeight = parseInt(window.getComputedStyle(d).height, 10);
+    d.style.top = ((windowHeight - dHeight) / 2) + "px"; // Place at vcenter
+};
+
+jsConfirm._show = function () {
+    "use strict";
+
+    var background = document.getElementById("jsConfirmBackground"); // DOM object
+    jsConfirm._addClass(background, "show");
+
+    var modalWindow = document.getElementById("jsConfirm"); // DOM object
+    jsConfirm._vCenter(modalWindow);
 };
 
 document.addEventListener("DOMContentLoaded", function() {

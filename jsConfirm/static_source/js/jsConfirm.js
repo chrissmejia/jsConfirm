@@ -33,19 +33,47 @@ jsConfirm.init = function (className, callback) {
         e =e || window.event;
         var target = e.target || e.srcElement;
 
-        // hear only for a elements
+        // Hear only for a elements
         if (target.nodeName !== 'A') {
             return;
         }
         
-        // hear only for the set it className
+        // Hear only for the set it className
         var re = new RegExp("(?:^| )" + className + "(?:$| )", 'g');
         if (!target.className.match(re)) {
             return;
         }
 
         callback(target);
+        jsConfirm._show();
     };
+};
+
+jsConfirm._removeClass = function (d, className) {
+    "use strict";
+
+    className = " " + className; //must keep a space before class name
+    d.className = d.className.replace(className,""); // first remove the class name if that already exists
+};
+
+jsConfirm._addClass = function (d, className) {
+    "use strict";
+    
+    jsConfirm._removeClass(d, className); // first remove the class name if that already exists
+    d.className = d.className + " " + className; // adding new class name
+};
+
+jsConfirm._show = function () {
+    "use strict";
+
+    var background = document.getElementById("jsConfirmBackground"); // DOM object
+    jsConfirm._addClass(background, "show");
+
+    var windowHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0); // Window inner height
+    var modalWindow = document.getElementById("jsConfirm"); // DOM object
+    var modalWindowHeight = parseInt(window.getComputedStyle(modalWindow).height, 10);
+    modalWindow.style.top = ((windowHeight - modalWindowHeight) / 2) + "px"; // Place at vcenter
+    console.log(modalWindowHeight);
 };
 
 document.addEventListener("DOMContentLoaded", function() {
