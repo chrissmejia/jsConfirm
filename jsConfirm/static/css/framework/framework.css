@@ -381,6 +381,14 @@ a {
     width: 100%;
   }
 }
+/* line 27, ../../../static_source/scss/framework/_transitions.scss */
+.transition {
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
 /* line 25, ../../../static_source/scss/framework/_position.scss */
 .right {
   float: right;

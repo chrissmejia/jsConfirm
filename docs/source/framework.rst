@@ -43,6 +43,12 @@ To make the life easier, the media queries are already set for you, and can be c
    @media #{$xxlarge-up} { }
    @media #{$xxlarge-only} { }
 
+=================
+Transition Helper
+=================
+
+This it's a simple but powerfull weapon to make interfaces look nicer, just add the class ``transition`` and every change in the css it's going to be distributed in 500ms.
+
 ================
 Position Helpers
 ================
