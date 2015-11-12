@@ -22,15 +22,10 @@
 // SOFTWARE.                                                                              //
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-* {
-    -webkit-font-smoothing: subpixel-antialiased;
-    box-sizing: border-box;
-}
+$black: #000;
+$white: #fff;
+$gray: #494C4C;
+$red: #E34F4F;
 
-body {
-	font-family: $font-family;	
-}
-
-a {
-	text-decoration: none;
-}
+$window-border-color: #263545;
+$inner-border-color: #C4CACC;

@@ -22,7 +22,5 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-@import "compass/reset";
-@import "framework/framework";
-@import "web/web";
-@import "jsConfirm/jsConfirm";
+@import "settings";
+@import "core";
