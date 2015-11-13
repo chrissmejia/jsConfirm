@@ -28,6 +28,7 @@
 var jsConfirm = {
     name : 'jsConfirm',
     version : '0.0.1',
+    settings: {},
 };
 
 
@@ -37,10 +38,24 @@ var jsConfirm = {
 jsConfirm.init = function (className, callback) {
     "use strict";
 
-    // Moving to start position
-    var modalWindow = document.getElementById("jsConfirm"); // DOM object
-    jsConfirm._startPosition(modalWindow);
+    // Moving to start position only the first time
+    if (!Object.keys(jsConfirm.settings).length) {
+        var modalWindow = document.getElementById("jsConfirm"); // DOM object
+        jsConfirm._startPosition(modalWindow);
+    }
 
+    // Checking if it's already initialized
+    if (className in jsConfirm.settings) {
+        console.log(className + " is already initialized");
+        return;
+    }
+    
+    // Initializing element
+    // Storing settings
+    jsConfirm.settings[className] = {
+        callback: callback
+    };
+    
     // Events
     document.body.onclick = function(e) {
         e =e || window.event;
@@ -56,11 +71,14 @@ jsConfirm.init = function (className, callback) {
             return;
         }
         
-        // Listen only for the set it className
-        if (jsConfirm._hasClass(target, className)) {
-            callback(target);
-            jsConfirm._show();
+        // Listen only for any of the set it classNames
+        for (var modal in jsConfirm.settings) {
+            if (jsConfirm._hasClass(target, modal)) {
+                jsConfirm.settings[modal].callback(target);
+                jsConfirm._show();
+            }
         }
+
 
     };
 };
@@ -205,6 +223,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     console.log('loaded');
     jsConfirm.init('delete', jsConfirmDemo.confirmCallback);
+    jsConfirm.init('like', jsConfirmDemo.confirmCallbackTwo);
 });
 
 var jsConfirmDemo = {};
@@ -212,5 +231,11 @@ var jsConfirmDemo = {};
 jsConfirmDemo.confirmCallback = function(target) {
     "use strict";
 
-    console.log(target);    
+    console.log("delete");
+};
+
+jsConfirmDemo.confirmCallbackTwo = function(target) {
+    "use strict";
+
+    console.log("like");
 };
