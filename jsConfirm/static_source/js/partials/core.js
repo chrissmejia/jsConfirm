@@ -83,9 +83,24 @@ jsConfirm.init = function (className, settings) {
                 jsConfirm._show(target, modal);
             }
         }
-
-
+        
+        jsConfirm._preventDefault(e);
     };
+};
+
+//------------------------------------------------------------------------------------------
+// x-browser prevent default action and cancel bubbling
+//------------------------------------------------------------------------------------------
+jsConfirm._preventDefault = function (e) {
+    "use strict";
+
+    if (typeof e.preventDefault === 'function') {
+        e.preventDefault();
+        e.stopPropagation();
+    } else {
+        e.returnValue = false;
+        e.cancelBubble = true;
+    }
 };
 
 //------------------------------------------------------------------------------------------
