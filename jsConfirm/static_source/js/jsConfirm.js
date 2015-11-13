@@ -30,7 +30,9 @@ var jsConfirm = {
     version : '0.0.1',
     cache: {}, // Don't hit the DOM at least that is strictly necessary
     settings: {},
-    window: '' // Current window type, don't ask the DOM
+    window: '', // Current window type, don't ask the DOM
+//    resized: false//, // Avoid recalcule until is strictly necessary
+//    resolution: {}
 };
 
 
@@ -103,6 +105,8 @@ jsConfirm.init = function (className, settings) {
 // Check if the value it's already calculated
 //------------------------------------------------------------------------------------------
 jsConfirm._get = function(name, getFn, force) {
+    "use strict";
+
     if (jsConfirm.cache[name] && !force) {
         return jsConfirm.cache[name];
     }
@@ -111,21 +115,44 @@ jsConfirm._get = function(name, getFn, force) {
 };
 
 //------------------------------------------------------------------------------------------
+// Check if the modal window it's visible without hit the DOM
+//------------------------------------------------------------------------------------------
+jsConfirm._visible = function() {
+    "use strict";
+
+    if (jsConfirm.window) {
+        return true;
+    }
+    return false;
+};
+
+//------------------------------------------------------------------------------------------
 // Cache neet to be refreshed when the windows it's resized
 //------------------------------------------------------------------------------------------
 jsConfirm._resize = function() {
+    "use strict";
+
     var modalWindow = document.getElementById("jsConfirm");
 
-    jsConfirm._get("_windowHeight", jsConfirm._windowHeight(), true);
-    jsConfirm._get("_windowWidth", jsConfirm._windowWidth(), true);
-    jsConfirm._get("_modalWidth", jsConfirm._modalWidth(modalWindow), true);
+    jsConfirm._recalculate(modalWindow);
 
-    if (jsConfirm.window) { // The modal it's visible
+    if (jsConfirm._visible()) {
         jsConfirm._vCenter(modalWindow);    
         jsConfirm._center(modalWindow);    
     } else {
         jsConfirm._startPosition(modalWindow);            
     }
+};
+
+//------------------------------------------------------------------------------------------
+// Refresh cache size calculations
+//------------------------------------------------------------------------------------------
+jsConfirm._recalculate = function(d) {
+    "use strict";
+
+    jsConfirm._get("_windowHeight", jsConfirm._windowHeight(), true);
+    jsConfirm._get("_windowWidth", jsConfirm._windowWidth(), true);
+    jsConfirm._get("_modalWidth", jsConfirm._modalWidth(d), true);
 };
 
 //------------------------------------------------------------------------------------------
