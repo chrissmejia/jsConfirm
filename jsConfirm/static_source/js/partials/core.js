@@ -46,19 +46,22 @@ jsConfirm.init = function (className, callback) {
         e =e || window.event;
         var target = e.target || e.srcElement;
 
-        // Hear only for a elements
+        // Listen to close modal
+        if (jsConfirm._hasClass(target, "jsConfirmClose")) {
+            jsConfirm._hide();
+        }
+        
+        // Listen only a elements
         if (target.nodeName !== 'A') {
             return;
         }
         
-        // Hear only for the set it className
-        var re = new RegExp("(?:^| )" + className + "(?:$| )", 'g');
-        if (!target.className.match(re)) {
-            return;
+        // Listen only for the set it className
+        if (jsConfirm._hasClass(target, className)) {
+            callback(target);
+            jsConfirm._show();
         }
 
-        callback(target);
-        jsConfirm._show();
     };
 };
 
@@ -80,6 +83,19 @@ jsConfirm._addClass = function (d, className) {
     
     jsConfirm._removeClass(d, className); // first remove the class name if that already exists
     d.className = d.className + " " + className; // adding new class name
+};
+
+//------------------------------------------------------------------------------------------
+// Check if an element has a class
+//------------------------------------------------------------------------------------------
+jsConfirm._hasClass = function (d, className) {
+    "use strict";
+    
+    var re = new RegExp("(?:^| )" + className + "(?:$| )", 'g');
+    if (d.className.match(re)) {
+        return true;
+    }
+    return false;
 };
 
 //------------------------------------------------------------------------------------------
@@ -163,6 +179,19 @@ jsConfirm._show = function () {
 
     var modalWindow = document.getElementById("jsConfirm"); // DOM object
     jsConfirm._vCenter(modalWindow);
+};
+
+//------------------------------------------------------------------------------------------
+// Hide the modal
+//------------------------------------------------------------------------------------------
+jsConfirm._hide = function () {
+    "use strict";
+
+    var modalWindow = document.getElementById("jsConfirm"); // DOM object
+    jsConfirm._startPosition(modalWindow);
+
+    var background = document.getElementById("jsConfirmBackground"); // DOM object
+    jsConfirm._removeClass(background, "show");
 };
 
 

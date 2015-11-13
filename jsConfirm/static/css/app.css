@@ -715,7 +715,22 @@ SOFTWARE.
 #jsConfirm .title {
   padding: 1.2rem 2rem;
 }
-/* line 57, ../../static_source/scss/jsConfirm/_core.scss */
+/* line 56, ../../static_source/scss/jsConfirm/_core.scss */
+#jsConfirm .title .jsConfirmClose.icon {
+  color: #494C4C;
+  font-family: "Proxima Nova Semibold";
+  width: 4rem;
+  height: 3.4rem;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIpJREFUeNqET0EKwkAQS8Z+wy/ppUcpnvoKj+IjPEnxVD3Y1RfpL4Ru3NGtLHgwMDAkTDJhf7vuELWi4qZeLDsknMPQiLaF8cg+hDvJeeKVpsUH+zSU9Kj8EpwdnMgC8i7XLNu22YGT6Jxrhj/gabg0sG+EygjEcW3vbwvbMs61yqvot+ZzqvkSYACvWD5CIXSeBAAAAABJRU5ErkJggg==');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12.5%;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/* line 66, ../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirm .description {
   color: #494C4C;
   padding: 3rem 0;
@@ -723,19 +738,19 @@ SOFTWARE.
   border-top: 0.1rem solid #C4CACC;
   border-bottom: 0.1rem solid #C4CACC;
 }
-/* line 64, ../../static_source/scss/jsConfirm/_core.scss */
+/* line 73, ../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirm .description span {
   display: inline-block;
   font-family: "Proxima Nova Semibold";
 }
-/* line 71, ../../static_source/scss/jsConfirm/_core.scss */
+/* line 80, ../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirm .buttons a {
   width: 50%;
   display: inline-block;
   font-size: 0.875rem;
   color: #494C4C;
 }
-/* line 78, ../../static_source/scss/jsConfirm/_core.scss */
+/* line 87, ../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirm .buttons #jsConfirmProceed {
   color: #E34F4F;
   border-left: 0.1rem solid #C4CACC;

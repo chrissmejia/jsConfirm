@@ -21,11 +21,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE          //
 // SOFTWARE.                                                                              //
 ////////////////////////////////////////////////////////////////////////////////////////////
+
+//------------------------------------------------------------------------------------------
+// Main Object, everything it's contained here
+//------------------------------------------------------------------------------------------
 var jsConfirm = {
     name : 'jsConfirm',
     version : '0.0.1',
 };
 
+
+//------------------------------------------------------------------------------------------
+// Setup the window
+//------------------------------------------------------------------------------------------
 jsConfirm.init = function (className, callback) {
     "use strict";
 
@@ -38,22 +46,28 @@ jsConfirm.init = function (className, callback) {
         e =e || window.event;
         var target = e.target || e.srcElement;
 
-        // Hear only for a elements
+        // Listen to close modal
+        if (jsConfirm._hasClass(target, "jsConfirmClose")) {
+            jsConfirm._hide();
+        }
+        
+        // Listen only a elements
         if (target.nodeName !== 'A') {
             return;
         }
         
-        // Hear only for the set it className
-        var re = new RegExp("(?:^| )" + className + "(?:$| )", 'g');
-        if (!target.className.match(re)) {
-            return;
+        // Listen only for the set it className
+        if (jsConfirm._hasClass(target, className)) {
+            callback(target);
+            jsConfirm._show();
         }
 
-        callback(target);
-        jsConfirm._show();
     };
 };
 
+//------------------------------------------------------------------------------------------
+// Remove a class from an object using the id
+//------------------------------------------------------------------------------------------
 jsConfirm._removeClass = function (d, className) {
     "use strict";
 
@@ -61,6 +75,9 @@ jsConfirm._removeClass = function (d, className) {
     d.className = d.className.replace(className,""); // first remove the class name if that already exists
 };
 
+//------------------------------------------------------------------------------------------
+// Add a class from an object using the id
+//------------------------------------------------------------------------------------------
 jsConfirm._addClass = function (d, className) {
     "use strict";
     
@@ -68,30 +85,58 @@ jsConfirm._addClass = function (d, className) {
     d.className = d.className + " " + className; // adding new class name
 };
 
+//------------------------------------------------------------------------------------------
+// Check if an element has a class
+//------------------------------------------------------------------------------------------
+jsConfirm._hasClass = function (d, className) {
+    "use strict";
+    
+    var re = new RegExp("(?:^| )" + className + "(?:$| )", 'g');
+    if (d.className.match(re)) {
+        return true;
+    }
+    return false;
+};
+
+//------------------------------------------------------------------------------------------
+// Get the window width
+//------------------------------------------------------------------------------------------
 jsConfirm._windowWidth = function () {
     "use strict";
 
     return Math.max(document.documentElement.clientWidth, window.innerWidth || 0); // Window inner width
 };
 
+//------------------------------------------------------------------------------------------
+// Get the window height
+//------------------------------------------------------------------------------------------
 jsConfirm._windowHeight = function () {
     "use strict";
 
     return Math.max(document.documentElement.clientHeight, window.innerHeight || 0); // Window inner height
 };
 
+//------------------------------------------------------------------------------------------
+// Get the modal width
+//------------------------------------------------------------------------------------------
 jsConfirm._modalWidth = function (d) {
     "use strict";
 
     return parseInt(window.getComputedStyle(d).width, 10); // modal width
 };
 
+//------------------------------------------------------------------------------------------
+// Get the modal height
+//------------------------------------------------------------------------------------------
 jsConfirm._modalHeight = function (d) {
     "use strict";
 
     return parseInt(window.getComputedStyle(d).height, 10); // modal width
 };
 
+//------------------------------------------------------------------------------------------
+// Center the modal in x axys
+//------------------------------------------------------------------------------------------
 jsConfirm._center = function (d) {
     "use strict";
     
@@ -100,6 +145,9 @@ jsConfirm._center = function (d) {
     d.style.left = ((windowWidth - dWidth) / 2) + "px"; // Place at center
 };
 
+//------------------------------------------------------------------------------------------
+// Center the modal in y axys
+//------------------------------------------------------------------------------------------
 jsConfirm._vCenter = function (d) {
     "use strict";
     
@@ -108,6 +156,9 @@ jsConfirm._vCenter = function (d) {
     d.style.top = ((windowHeight - dHeight) / 2) + "px"; // Place at vcenter
 };
 
+//------------------------------------------------------------------------------------------
+// Move the modal window to his start position
+//------------------------------------------------------------------------------------------
 jsConfirm._startPosition = function (d) {
     "use strict";
     
@@ -117,6 +168,9 @@ jsConfirm._startPosition = function (d) {
 
 };
 
+//------------------------------------------------------------------------------------------
+// Show the modal
+//------------------------------------------------------------------------------------------
 jsConfirm._show = function () {
     "use strict";
 
@@ -127,6 +181,25 @@ jsConfirm._show = function () {
     jsConfirm._vCenter(modalWindow);
 };
 
+
+//------------------------------------------------------------------------------------------
+// Hide the modal
+//------------------------------------------------------------------------------------------
+jsConfirm._hide = function () {
+    "use strict";
+
+    var modalWindow = document.getElementById("jsConfirm"); // DOM object
+    jsConfirm._startPosition(modalWindow);
+
+    var background = document.getElementById("jsConfirmBackground"); // DOM object
+    jsConfirm._removeClass(background, "show");
+};
+
+
+// Move to other file
+//------------------------------------------------------------------------------------------
+// The app
+//------------------------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", function() {
     "use strict";
 

@@ -80,15 +80,16 @@
 
   <div id="jsConfirm" class="transition">
     <div class="title row">
+      <a class="jsConfirmClose icon right" href="#"></a>
       <h1>Delete Image</h1>
     </div>
     <div class="description row text-center">
       <h1>Are you sure you want to delete <span>iPhone5S.jpg</span>?</h1>
     </div>
     <div class="buttons row">
-      <a id="jsConfirmCancel" class="text-center" href="#">Cancel</a><a id="jsConfirmProceed" class="text-center" href="#">Delete file</a>
+      <a id="jsConfirmCancel" class="jsConfirmClose text-center" href="#">Cancel</a><a id="jsConfirmProceed" class="text-center" href="#">Delete file</a>
     </div>
   </div>
-  <div id="jsConfirmBackground" class="transition"></div>
+  <div id="jsConfirmBackground" class="jsConfirmClose transition"></div>
 
 {% endblock %}
