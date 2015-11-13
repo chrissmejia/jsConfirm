@@ -138,7 +138,7 @@ jsConfirm._resize = function() {
 
     if (jsConfirm._visible()) {
         jsConfirm._vCenter(modalWindow);    
-        jsConfirm._center(modalWindow);    
+        jsConfirm._hCenter(modalWindow);    
     } else {
         jsConfirm._startPosition(modalWindow);            
     }
@@ -274,7 +274,7 @@ jsConfirm._modalHeight = function (d) {
 //------------------------------------------------------------------------------------------
 // Center the modal in x axys
 //------------------------------------------------------------------------------------------
-jsConfirm._center = function (d) {
+jsConfirm._hCenter = function (d) {
     "use strict";
     
     var windowWidth = jsConfirm._get("_windowWidth", jsConfirm._windowWidth());
@@ -303,7 +303,7 @@ jsConfirm._startPosition = function (d) {
     
     var modalHeight = jsConfirm._modalHeight(d); // Not cached because change every launch depending of the description
 
-    jsConfirm._center(d);
+    jsConfirm._hCenter(d);
 
     d.style.top = "-" + modalHeight + "px";
 
