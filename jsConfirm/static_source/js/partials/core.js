@@ -125,20 +125,14 @@ jsConfirm._hasClass = function (d, className) {
 //------------------------------------------------------------------------------------------
 jsConfirm._getChildByClass = function (d, className) {
     "use strict";
-    
-    var childNodesLength = d.childNodes.length; // Performance
-    var node;
-    
-    // For each child
-    for (var i = 0; i < childNodesLength; i++) {
-        // If has ClassName and the ClassName match you found it!
-        node = d.childNodes[i]; // Performance
-        if ((node.className !== undefined) && jsConfirm._hasClass(node, className)) {
-            return node;
-        }
+
+    var childNodes = d.getElementsByClassName(className);
+
+    if (!childNodes.length) {
+        console.error("The element don't exists, are you sure you copy the base HTML?");        
     }
-    console.error("The element don't exists, are you sure you copy the base HTML?");
-    return false;
+
+    return childNodes[0];
 };
 
 //------------------------------------------------------------------------------------------
@@ -239,9 +233,27 @@ jsConfirm._show = function (className) {
 
     var modalWindow = document.getElementById("jsConfirm"); // DOM object
 
+    // Setting title (Optional)
     if (jsConfirm.settings[className].title){
         var title = jsConfirm._getChildByClasses(modalWindow, "title text");
         title.innerText = jsConfirm.settings[className].title;
+    }
+    // Setting text (Optional)
+    if (jsConfirm.settings[className].text){
+        var text = jsConfirm._getChildByClass(modalWindow, "description");
+        text.innerHTML = "<h1>" + jsConfirm.settings[className].text + "</h1>";
+    }
+
+    // Setting cancelText (Optional)
+    if (jsConfirm.settings[className].cancelText){
+        var cancelText = jsConfirm._getChildByClass(modalWindow, "cancel");
+        cancelText.innerText = jsConfirm.settings[className].cancelText;
+    }
+
+    // Setting proceedText (Optional)
+    if (jsConfirm.settings[className].proceedText){
+        var proceedText = jsConfirm._getChildByClass(modalWindow, "proceed");
+        proceedText.innerText = jsConfirm.settings[className].proceedText;
     }
 
     jsConfirm._vCenter(modalWindow);
@@ -271,12 +283,18 @@ document.addEventListener("DOMContentLoaded", function() {
 
     jsConfirm.init('delete', {
         callback: jsConfirmDemo.confirmCallback,
-        title: "Delete Image"
+        title: "Delete Image",
+        text: "Are you sure you want to delete iPhone5S.jpg?",
+        cancelText: "Cancel",
+        proceedText: "Delete file"
     });
 
     jsConfirm.init('like', {
         callback: jsConfirmDemo.confirmCallbackTwo,
-        title: "Like Image"
+        title: "Like Image",
+        text: "Are you sure you want to save iPhone5S.jpg?",
+        cancelText: "Cancel",
+        proceedText: "Save file"
     });
 });
 
