@@ -28,7 +28,9 @@
 var jsConfirm = {
     name : 'jsConfirm',
     version : '0.0.1',
+    cache: {}, // Don't hit the DOM at least that is strictly necessary
     settings: {},
+    window: '' // Current window type, don't ask the DOM
 };
 
 
@@ -76,16 +78,40 @@ jsConfirm.init = function (className, settings) {
             return;
         }
         
-        // Listen only for any of the set it classNames
+        // Show window for any of the set it classNames
         for (var modal in jsConfirm.settings) {
             if (jsConfirm._hasClass(target, modal)) {
-                jsConfirm.settings[modal].callback(target);
                 jsConfirm._show(target, modal);
             }
         }
-        
-        jsConfirm._preventDefault(e);
+
+        if (target.getAttribute('id') === "jsConfirmProceed") {
+            jsConfirm.settings[jsConfirm.window].callback(target);
+        }
     };
+};
+
+
+//------------------------------------------------------------------------------------------
+// Don't hit the DOM at least that is strictly necessary
+// Check if the value it's already calculated
+//------------------------------------------------------------------------------------------
+jsConfirm._get = function(name, getFn, force) {
+    if (jsConfirm.cache[name] && !force) {
+        return jsConfirm.cache[name];
+    }
+    jsConfirm.cache[name] = getFn;
+    return jsConfirm.cache[name];
+};
+
+//------------------------------------------------------------------------------------------
+// Cache neet to be refreshed when the windows it's resized
+//------------------------------------------------------------------------------------------
+jsConfirm._resize = function() {
+    //_modalHeight
+    //_windowHeight
+    //_windowWidth
+    //_modalWidth
 };
 
 //------------------------------------------------------------------------------------------
@@ -210,8 +236,9 @@ jsConfirm._modalHeight = function (d) {
 jsConfirm._center = function (d) {
     "use strict";
     
-    var windowWidth = jsConfirm._windowWidth();
-    var dWidth = jsConfirm._modalWidth(d);
+    var windowWidth = jsConfirm._get("_windowWidth", jsConfirm._windowWidth());
+    var dWidth = jsConfirm._get("_modalWidth", jsConfirm._modalWidth(d));
+
     d.style.left = ((windowWidth - dWidth) / 2) + "px"; // Place at center
 };
 
@@ -221,8 +248,9 @@ jsConfirm._center = function (d) {
 jsConfirm._vCenter = function (d) {
     "use strict";
     
-    var windowHeight = jsConfirm._windowHeight(); // Window inner height
-    var dHeight = parseInt(window.getComputedStyle(d).height, 10);
+    var windowHeight = jsConfirm._get("_windowHeight", jsConfirm._windowHeight());
+    var dHeight = parseInt(window.getComputedStyle(d).height, 10); // Not cached because change every launch depending of the description
+
     d.style.top = ((windowHeight - dHeight) / 2) + "px"; // Place at vcenter
 };
 
@@ -232,9 +260,11 @@ jsConfirm._vCenter = function (d) {
 jsConfirm._startPosition = function (d) {
     "use strict";
     
+    var modalHeight = jsConfirm._get("_modalHeight", jsConfirm._modalHeight(d));
+
     jsConfirm._center(d);
 
-    d.style.top = "-" + jsConfirm._modalHeight(d) + "px";
+    d.style.top = "-" + modalHeight + "px";
 
 };
 
@@ -260,11 +290,9 @@ jsConfirm._show = function (d, className) {
         var customHTML = "<h1>" + jsConfirm.settings[className].text + "</h1>";
 
         var dataArray = jsConfirm.settings[className].data;
-        console.log(dataArray);
         var dataArrayLength = dataArray.length - 1; // Performance
         for (var i = dataArrayLength; i >= 0; i--) {
             customHTML = customHTML.replace("{#" + dataArray[i] + "#}", "<span>" + d.getAttribute("data-" + dataArray[i]) + "</span>");
-            console.log("{#" + dataArray[i] + "#}");
         }
         text.innerHTML = customHTML;
     }
@@ -280,6 +308,8 @@ jsConfirm._show = function (d, className) {
         var proceedText = jsConfirm._getChildByClass(modalWindow, "proceed");
         proceedText.innerText = jsConfirm.settings[className].proceedText;
     }
+
+    jsConfirm.window = className;
 
     jsConfirm._vCenter(modalWindow);
 };
