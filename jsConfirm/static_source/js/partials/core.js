@@ -40,10 +40,16 @@ var jsConfirm = {
 jsConfirm.init = function (className, settings) {
     "use strict";
 
-    // Moving to start position only the first time
+    // Run only the first time
     if (!Object.keys(jsConfirm.settings).length) {
+        
+        // Moving to start position
         var modalWindow = document.getElementById("jsConfirm"); // DOM object
         jsConfirm._startPosition(modalWindow);
+
+        window.onresize = function() {
+            jsConfirm._resize();
+        };
     }
 
     // Checking if it's already initialized
@@ -108,10 +114,18 @@ jsConfirm._get = function(name, getFn, force) {
 // Cache neet to be refreshed when the windows it's resized
 //------------------------------------------------------------------------------------------
 jsConfirm._resize = function() {
-    //_modalHeight
-    //_windowHeight
-    //_windowWidth
-    //_modalWidth
+    var modalWindow = document.getElementById("jsConfirm");
+
+    jsConfirm._get("_windowHeight", jsConfirm._windowHeight(), true);
+    jsConfirm._get("_windowWidth", jsConfirm._windowWidth(), true);
+    jsConfirm._get("_modalWidth", jsConfirm._modalWidth(modalWindow), true);
+
+    if (jsConfirm.window) { // The modal it's visible
+        jsConfirm._vCenter(modalWindow);    
+        jsConfirm._center(modalWindow);    
+    } else {
+        jsConfirm._startPosition(modalWindow);            
+    }
 };
 
 //------------------------------------------------------------------------------------------
@@ -249,7 +263,7 @@ jsConfirm._vCenter = function (d) {
     "use strict";
     
     var windowHeight = jsConfirm._get("_windowHeight", jsConfirm._windowHeight());
-    var dHeight = parseInt(window.getComputedStyle(d).height, 10); // Not cached because change every launch depending of the description
+    var dHeight = jsConfirm._modalHeight(d); // Not cached because change every launch depending of the description
 
     d.style.top = ((windowHeight - dHeight) / 2) + "px"; // Place at vcenter
 };
@@ -260,7 +274,7 @@ jsConfirm._vCenter = function (d) {
 jsConfirm._startPosition = function (d) {
     "use strict";
     
-    var modalHeight = jsConfirm._get("_modalHeight", jsConfirm._modalHeight(d));
+    var modalHeight = jsConfirm._modalHeight(d); // Not cached because change every launch depending of the description
 
     jsConfirm._center(d);
 
@@ -325,7 +339,10 @@ jsConfirm._hide = function () {
 
     var background = document.getElementById("jsConfirmBackground"); // DOM object
     jsConfirm._removeClass(background, "show");
+
+    jsConfirm.window = "";
 };
+
 
 
 
