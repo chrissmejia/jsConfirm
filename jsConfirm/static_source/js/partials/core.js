@@ -46,13 +46,13 @@ jsConfirm.init = function (className, settings) {
 
     // Checking if it's already initialized
     if (className in jsConfirm.settings) {
-        console.log(className + " is already initialized");
+        console.error(className + " is already initialized");
         return;
     }
 
     // Checking if a callback it's provided
     if (typeof settings.callback !== "function") {
-        console.log("Callback it's not provided for " + className);
+        console.error("Callback it's not provided for " + className);
         return;
     }
     
@@ -124,16 +124,36 @@ jsConfirm._hasClass = function (d, className) {
 // Get child element from parent by class name
 //------------------------------------------------------------------------------------------
 jsConfirm._getChildByClass = function (d, className) {
-    for (var i = 0, il = d.childNodes.length; i < il; i++) {
-        var classes = d.childNodes[i].className !== undefined? d.childNodes[i].className.split(" ") : [];
-
-        for (var j = 0, jl = classes.length; j < jl; j++) {
-            if (classes[j] == className) {
-                notes = d.childNodes[i];  
-            }
+    "use strict";
+    
+    var childNodesLength = d.childNodes.length;
+    
+    // For each child
+    for (var i = 0, il = childNodesLength; i < il; i++) {
+        // If has ClassName and the ClassName match you found it!
+        if ((d.childNodes[i].className !== undefined) && jsConfirm._hasClass(d.childNodes[i], className)) {
+            return d.childNodes[i];
         }
     }
-    return notes;
+    console.error("The element don't exists, are you sure you copy the base HTML?");
+    return false;
+};
+
+//------------------------------------------------------------------------------------------
+// Get child element from parent by more than one class name
+//------------------------------------------------------------------------------------------
+jsConfirm._getChildByClasses = function (d, classNames) {
+    "use strict";
+
+    var classArray = classNames.split(" ");
+    var classArrayLength = classArray.length; // Performance
+
+    // Search in order
+    for (var i = 0; i < classArrayLength; i++) {
+        d = jsConfirm._getChildByClass(d, classArray[i]);
+    }
+
+    return d;
 };
 
 //------------------------------------------------------------------------------------------
@@ -218,7 +238,7 @@ jsConfirm._show = function (className) {
     var modalWindow = document.getElementById("jsConfirm"); // DOM object
 
     if (jsConfirm.settings[className].title){
-        var title = jsConfirm._getChildByClass(modalWindow, "title");
+        var title = jsConfirm._getChildByClasses(modalWindow, "title text");
         title.innerText = jsConfirm.settings[className].title;
     }
 
