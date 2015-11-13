@@ -751,7 +751,7 @@ SOFTWARE.
   color: #494C4C;
 }
 /* line 87, ../../static_source/scss/jsConfirm/_core.scss */
-#jsConfirm .buttons #jsConfirmProceed {
+#jsConfirm .buttons .proceed {
   color: #E34F4F;
   border-left: 0.1rem solid #C4CACC;
   padding: 1.4rem 0;

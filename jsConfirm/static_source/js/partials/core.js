@@ -68,6 +68,7 @@ jsConfirm.init = function (className, settings) {
         // Listen to close modal
         if (jsConfirm._hasClass(target, "jsConfirmClose")) {
             jsConfirm._hide();
+            return;
         }
         
         // Listen only a elements
