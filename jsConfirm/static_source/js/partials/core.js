@@ -126,13 +126,15 @@ jsConfirm._hasClass = function (d, className) {
 jsConfirm._getChildByClass = function (d, className) {
     "use strict";
     
-    var childNodesLength = d.childNodes.length;
+    var childNodesLength = d.childNodes.length; // Performance
+    var node;
     
     // For each child
-    for (var i = 0, il = childNodesLength; i < il; i++) {
+    for (var i = 0; i < childNodesLength; i++) {
         // If has ClassName and the ClassName match you found it!
-        if ((d.childNodes[i].className !== undefined) && jsConfirm._hasClass(d.childNodes[i], className)) {
-            return d.childNodes[i];
+        node = d.childNodes[i]; // Performance
+        if ((node.className !== undefined) && jsConfirm._hasClass(node, className)) {
+            return node;
         }
     }
     console.error("The element don't exists, are you sure you copy the base HTML?");
