@@ -35,7 +35,7 @@ var jsConfirm = {
 //------------------------------------------------------------------------------------------
 // Setup the window
 //------------------------------------------------------------------------------------------
-jsConfirm.init = function (className, callback) {
+jsConfirm.init = function (className, settings) {
     "use strict";
 
     // Moving to start position only the first time
@@ -49,12 +49,16 @@ jsConfirm.init = function (className, callback) {
         console.log(className + " is already initialized");
         return;
     }
+
+    // Checking if a callback it's provided
+    if (typeof settings.callback !== "function") {
+        console.log("Callback it's not provided for " + className);
+        return;
+    }
     
     // Initializing element
     // Storing settings
-    jsConfirm.settings[className] = {
-        callback: callback
-    };
+    jsConfirm.settings[className] = settings;
     
     // Events
     document.body.onclick = function(e) {
@@ -75,7 +79,7 @@ jsConfirm.init = function (className, callback) {
         for (var modal in jsConfirm.settings) {
             if (jsConfirm._hasClass(target, modal)) {
                 jsConfirm.settings[modal].callback(target);
-                jsConfirm._show();
+                jsConfirm._show(modal);
             }
         }
 
@@ -114,6 +118,22 @@ jsConfirm._hasClass = function (d, className) {
         return true;
     }
     return false;
+};
+
+//------------------------------------------------------------------------------------------
+// Get child element from parent by class name
+//------------------------------------------------------------------------------------------
+jsConfirm._getChildByClass = function (d, className) {
+    for (var i = 0, il = d.childNodes.length; i < il; i++) {
+        var classes = d.childNodes[i].className !== undefined? d.childNodes[i].className.split(" ") : [];
+
+        for (var j = 0, jl = classes.length; j < jl; j++) {
+            if (classes[j] == className) {
+                notes = d.childNodes[i];  
+            }
+        }
+    }
+    return notes;
 };
 
 //------------------------------------------------------------------------------------------
@@ -189,13 +209,19 @@ jsConfirm._startPosition = function (d) {
 //------------------------------------------------------------------------------------------
 // Show the modal
 //------------------------------------------------------------------------------------------
-jsConfirm._show = function () {
+jsConfirm._show = function (className) {
     "use strict";
 
     var background = document.getElementById("jsConfirmBackground"); // DOM object
     jsConfirm._addClass(background, "show");
 
     var modalWindow = document.getElementById("jsConfirm"); // DOM object
+
+    if (jsConfirm.settings[className].title){
+        var title = jsConfirm._getChildByClass(modalWindow, "title");
+        title.innerText = jsConfirm.settings[className].title;
+    }
+
     jsConfirm._vCenter(modalWindow);
 };
 
@@ -221,9 +247,15 @@ jsConfirm._hide = function () {
 document.addEventListener("DOMContentLoaded", function() {
     "use strict";
 
-    console.log('loaded');
-    jsConfirm.init('delete', jsConfirmDemo.confirmCallback);
-    jsConfirm.init('like', jsConfirmDemo.confirmCallbackTwo);
+    jsConfirm.init('delete', {
+        callback: jsConfirmDemo.confirmCallback,
+        title: "Delete Image"
+    });
+
+    jsConfirm.init('like', {
+        callback: jsConfirmDemo.confirmCallbackTwo,
+        title: "Like Image"
+    });
 });
 
 var jsConfirmDemo = {};
