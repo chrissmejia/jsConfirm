@@ -80,7 +80,7 @@ jsConfirm.init = function (className, settings) {
         for (var modal in jsConfirm.settings) {
             if (jsConfirm._hasClass(target, modal)) {
                 jsConfirm.settings[modal].callback(target);
-                jsConfirm._show(modal);
+                jsConfirm._show(target, modal);
             }
         }
 
@@ -226,7 +226,7 @@ jsConfirm._startPosition = function (d) {
 //------------------------------------------------------------------------------------------
 // Show the modal
 //------------------------------------------------------------------------------------------
-jsConfirm._show = function (className) {
+jsConfirm._show = function (d, className) {
     "use strict";
 
     var background = document.getElementById("jsConfirmBackground"); // DOM object
@@ -242,7 +242,16 @@ jsConfirm._show = function (className) {
     // Setting text (Optional)
     if (jsConfirm.settings[className].text){
         var text = jsConfirm._getChildByClass(modalWindow, "description");
-        text.innerHTML = "<h1>" + jsConfirm.settings[className].text + "</h1>";
+        var customHTML = "<h1>" + jsConfirm.settings[className].text + "</h1>";
+
+        var dataArray = jsConfirm.settings[className].data;
+        console.log(dataArray);
+        var dataArrayLength = dataArray.length - 1; // Performance
+        for (var i = dataArrayLength; i >= 0; i--) {
+            customHTML = customHTML.replace("{#" + dataArray[i] + "#}", "<span>" + d.getAttribute("data-" + dataArray[i]) + "</span>");
+            console.log("{#" + dataArray[i] + "#}");
+        }
+        text.innerHTML = customHTML;
     }
 
     // Setting cancelText (Optional)
@@ -285,17 +294,19 @@ document.addEventListener("DOMContentLoaded", function() {
     jsConfirm.init('delete', {
         callback: jsConfirmDemo.confirmCallback,
         title: "Delete Image",
-        text: "Are you sure you want to delete iPhone5S.jpg?",
+        text: "Are you sure you want to delete {#name#}?",
         cancelText: "Cancel",
-        proceedText: "Delete file"
+        proceedText: "Delete file",
+        data: ["name", "id"]
     });
 
     jsConfirm.init('like', {
         callback: jsConfirmDemo.confirmCallbackTwo,
         title: "Like Image",
-        text: "Are you sure you want to save iPhone5S.jpg?",
+        text: "Are you sure you want to save {#name#}?",
         cancelText: "Cancel",
-        proceedText: "Save file"
+        proceedText: "Save file",
+        data: ["name", "id"]
     });
 });
 
