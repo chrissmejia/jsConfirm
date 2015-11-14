@@ -47,7 +47,7 @@ jsConfirm.init = function (className, settings) {
         
         // Moving to start position
         var modalWindow = document.getElementById("jsConfirm"); // DOM object
-        jsConfirm._startPosition(modalWindow);
+        jsConfirm._startPosition(modalWindow, false);
 
         window.onresize = function() {
             jsConfirm._resize();
@@ -95,6 +95,7 @@ jsConfirm.init = function (className, settings) {
 
         if (target.getAttribute('id') === "jsConfirmProceed") {
             jsConfirm.settings[jsConfirm.window].callback(target);
+            jsConfirm._hide();
         }
     };
 };
@@ -280,7 +281,6 @@ jsConfirm._hCenter = function (d) {
     var dWidth = jsConfirm._get("_modalWidth", jsConfirm._modalWidth(d));
 
     d.style.left = ((windowWidth - dWidth) / 2) + "px"; // Place at center
-    console.log('non');
 };
 
 //------------------------------------------------------------------------------------------
@@ -298,18 +298,22 @@ jsConfirm._vCenter = function (d) {
 //------------------------------------------------------------------------------------------
 // Move the modal window to his start position
 //------------------------------------------------------------------------------------------
-jsConfirm._startPosition = function (d) {
+jsConfirm._startPosition = function (d, animate) {
     "use strict";
     
     var modalHeight = jsConfirm._modalHeight(d); // Not cached because change every launch depending of the description
 
-    jsConfirm._addClass(d, "notransition");
+    if (!animate) {
+        jsConfirm._addClass(d, "notransition");        
+    }
+
     jsConfirm._hCenter(d);
     d.style.top = "-" + modalHeight + "px";
 
-    var forceReflow = d.offsetLeft + d.offsetTop; // Hack to fire DOM changes
-
-    jsConfirm._removeClass(d, "notransition");
+    if (!animate) {
+        var forceReflow = d.offsetLeft + d.offsetTop; // Hack to fire DOM changes
+        jsConfirm._removeClass(d, "notransition");
+    }
 };
 
 //------------------------------------------------------------------------------------------
@@ -325,7 +329,7 @@ jsConfirm._show = function (d, className) {
 
     if (jsConfirm.resized) { // Window size change
         jsConfirm._recalculate(modalWindow);
-        jsConfirm._startPosition(modalWindow);
+        jsConfirm._startPosition(modalWindow, false);
         jsConfirm.resized = false;
     }
 
@@ -371,7 +375,7 @@ jsConfirm._hide = function () {
     "use strict";
 
     var modalWindow = document.getElementById("jsConfirm"); // DOM object
-    jsConfirm._startPosition(modalWindow);
+    jsConfirm._startPosition(modalWindow, true);
 
     var background = document.getElementById("jsConfirmBackground"); // DOM object
     jsConfirm._removeClass(background, "show");
