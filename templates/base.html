@@ -54,11 +54,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     jsConfirm.init('delete', {
         callback: jsConfirmDemo.confirmCallback,
+        url: "{% url 'api:fake' %}",
         title: "Delete Image",
         text: "Are you sure you want to delete {#name#}?",
         cancelText: "Cancel",
         proceedText: "Delete file",
-        data: ["name", "id"]
+        data: ["name", "id"],
+        extra: {
+            csrfmiddlewaretoken: "{{ csrf_token }}"
+        }
     });
 
     jsConfirm.init('like', {
