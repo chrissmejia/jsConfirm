@@ -45,10 +45,6 @@ jsConfirm.init = function (className, settings) {
     // Run only the first time
     if (!Object.keys(jsConfirm.settings).length) {
         
-        // Moving to start position
-        var modalWindow = document.getElementById("jsConfirm"); // DOM object
-        jsConfirm._startPosition(modalWindow, false);
-
         window.onresize = function() {
             jsConfirm._resize();
         };
@@ -172,6 +168,83 @@ jsConfirm._get = function(name, getFn, force) {
 };
 
 //------------------------------------------------------------------------------------------
+// Create the modal if don't exists and place in the right position
+//------------------------------------------------------------------------------------------
+jsConfirm._prepareModal= function() {
+    "use strict";
+
+    var modalWindow = document.getElementById("jsConfirm"); // DOM object
+
+    if (!document.getElementById(modalWindow)) { // Modal don't exists
+        jsConfirm._createModal();
+        modalWindow = document.getElementById("jsConfirm");
+    }
+
+    if (jsConfirm.resized) { // Window size change
+        jsConfirm._recalculate(modalWindow);
+        jsConfirm.resized = false;
+    }
+
+    jsConfirm._startPosition(modalWindow, false);
+};
+
+//------------------------------------------------------------------------------------------
+// Create the modal
+//------------------------------------------------------------------------------------------
+jsConfirm._createModal= function() {
+    "use strict";
+
+    // Core
+    var modalWindow = document.createElement("div");
+    modalWindow.setAttribute("id", "jsConfirm");
+
+    // Close icon
+    var icon = document.createElement("a");
+    icon.setAttribute("class", "jsConfirmClose icon");
+    modalWindow.appendChild(icon);
+
+    // Title
+    var title = document.createElement("div");
+    title.setAttribute("class", "title");
+    title.innerText = "Delete Image";
+    modalWindow.appendChild(title);
+
+    // Description
+    var description = document.createElement("div");
+    description.setAttribute("class", "description");
+    description.innerText = "Are you sure you want to delete it?";
+    modalWindow.appendChild(description);
+
+    // Buttons
+    var buttons = document.createElement("div");
+    buttons.setAttribute("class", "buttons");
+
+    var cancel = document.createElement("a");
+    cancel.setAttribute("class", "cancel jsConfirmClose");
+    cancel.innerText = "Cancel";
+    buttons.appendChild(cancel);
+
+    var proceed = document.createElement("a");
+    proceed.setAttribute("id", "jsConfirmProceed");
+    proceed.setAttribute("class", "proceed");
+    proceed.innerText = "Delete file";
+    buttons.appendChild(proceed);
+
+    modalWindow.appendChild(buttons);
+
+    // Append modal to the body
+    document.body.appendChild(modalWindow);
+
+    // Background
+    var modalWindowBackground = document.createElement("div");
+    modalWindowBackground.setAttribute("id", "jsConfirmBackground");
+    modalWindowBackground.setAttribute("class", "jsConfirmClose");
+
+    // Append background to the body
+    document.body.appendChild(modalWindowBackground);
+};
+
+//------------------------------------------------------------------------------------------
 // Check if the modal window it's visible without hit the DOM
 //------------------------------------------------------------------------------------------
 jsConfirm._visible = function() {
@@ -193,8 +266,7 @@ jsConfirm._resize = function() {
         var modalWindow = document.getElementById("jsConfirm");
     
         jsConfirm._recalculate(modalWindow);
-        jsConfirm._vCenter(modalWindow);
-        jsConfirm._hCenter(modalWindow);
+        jsConfirm._center(modalWindow, false);
     } else {
         jsConfirm.resized = true; // Avoid recalcule until is strictly necessary
     }
@@ -352,6 +424,25 @@ jsConfirm._vCenter = function (d) {
 };
 
 //------------------------------------------------------------------------------------------
+// Center the modal in the screen
+//------------------------------------------------------------------------------------------
+jsConfirm._center = function (d, animate) {
+    "use strict";
+    
+    if (!animate) {
+        jsConfirm._addClass(d, "notransition");        
+    }
+
+    jsConfirm._vCenter(d);
+    jsConfirm._hCenter(d);
+
+    if (!animate) {
+        var forceReflow = d.offsetLeft + d.offsetTop; // Hack to fire DOM changes
+        jsConfirm._removeClass(d, "notransition");
+    }
+};
+
+//------------------------------------------------------------------------------------------
 // Move the modal window to his start position
 //------------------------------------------------------------------------------------------
 jsConfirm._startPosition = function (d, animate) {
@@ -378,16 +469,12 @@ jsConfirm._startPosition = function (d, animate) {
 jsConfirm._show = function (d, className) {
     "use strict";
 
+    jsConfirm._prepareModal();
+
     var background = document.getElementById("jsConfirmBackground"); // DOM object
     jsConfirm._addClass(background, "show");
 
     var modalWindow = document.getElementById("jsConfirm"); // DOM object
-
-    if (jsConfirm.resized) { // Window size change
-        jsConfirm._recalculate(modalWindow);
-        jsConfirm._startPosition(modalWindow, false);
-        jsConfirm.resized = false;
-    }
 
     // Setting title (Optional)
     if (jsConfirm.settings[className].title) {
