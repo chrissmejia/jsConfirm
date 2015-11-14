@@ -23,7 +23,17 @@ SOFTWARE.
 */
 
 @import "compass/css3/border-radius";
+@import "compass/css3/transition";
 
+@mixin import-image($url, $width, $height, $size:100%) {
+    width: $width;
+    height: $height;
+    background-image: inline-image($url);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: $size;
+    display: inline-block;
+}
 
 #jsConfirmBackground {
     position: absolute;
@@ -34,6 +44,7 @@ SOFTWARE.
     z-index: 100000000;
     opacity: 0;
     visibility: hidden;
+    @include single-transition(all, 0.5s);
 
     &.show {
         opacity: 0.6;
@@ -49,6 +60,7 @@ SOFTWARE.
     z-index: 100000000000;
     border: 0.1rem solid $window-border-color;
     @include border-radius(0.2rem);
+    @include single-transition(all, 0.5s);
 
     .title {
         padding: 1.2rem 2rem;
@@ -60,6 +72,7 @@ SOFTWARE.
             position: absolute;
             right: 0;
             top: 0;
+            float: right;
         }
     }
 
@@ -69,6 +82,7 @@ SOFTWARE.
 	    padding-bottom: 3rem;
 	    border-top: 0.1rem solid $inner-border-color;
 	    border-bottom: 0.1rem solid $inner-border-color;
+	    text-align: center;
 
 	    span {
 	        display: inline-block;
@@ -82,6 +96,7 @@ SOFTWARE.
             display: inline-block;
             font-size: 0.875rem;
     	    color: $gray;
+    	    text-align: center;
         }
 
         .proceed {
@@ -90,4 +105,8 @@ SOFTWARE.
             padding: 1.4rem 0;
         }
     }
+}
+
+.notransition {
+    @include single-transition(none !important, null);
 }

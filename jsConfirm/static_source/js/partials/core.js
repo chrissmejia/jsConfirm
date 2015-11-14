@@ -390,31 +390,31 @@ jsConfirm._show = function (d, className) {
     }
 
     // Setting title (Optional)
-    if (jsConfirm.settings[className].title){
+    if (jsConfirm.settings[className].title) {
         var title = jsConfirm._getChildByClasses(modalWindow, "title text");
         title.innerText = jsConfirm.settings[className].title;
     }
     // Setting text (Optional)
-    if (jsConfirm.settings[className].text){
+    if (jsConfirm.settings[className].text) {
         var text = jsConfirm._getChildByClass(modalWindow, "description");
-        var customHTML = "<h1>" + jsConfirm.settings[className].text + "</h1>";
+        var customHTML = jsConfirm.settings[className].text;
 
         var dataArray = jsConfirm.settings[className].data;
         var dataArrayLength = dataArray.length - 1; // Performance
         for (var i = dataArrayLength; i >= 0; i--) {
-            customHTML = customHTML.replace("{#" + dataArray[i] + "#}", "<span>" + d.getAttribute("data-" + dataArray[i]) + "</span>");
+            customHTML = customHTML.replace("{/" + dataArray[i] + "/}", "<span>" + d.getAttribute("data-" + dataArray[i]) + "</span>");
         }
         text.innerHTML = customHTML;
     }
 
     // Setting cancelText (Optional)
-    if (jsConfirm.settings[className].cancelText){
+    if (jsConfirm.settings[className].cancelText) {
         var cancelText = jsConfirm._getChildByClass(modalWindow, "cancel");
         cancelText.innerText = jsConfirm.settings[className].cancelText;
     }
 
     // Setting proceedText (Optional)
-    if (jsConfirm.settings[className].proceedText){
+    if (jsConfirm.settings[className].proceedText) {
         var proceedText = jsConfirm._getChildByClass(modalWindow, "proceed");
         proceedText.innerText = jsConfirm.settings[className].proceedText;
     }

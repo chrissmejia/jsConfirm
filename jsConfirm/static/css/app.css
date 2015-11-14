@@ -690,7 +690,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-/* line 28, ../../static_source/scss/jsConfirm/_core.scss */
+/* line 38, ../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirmBackground {
   position: absolute;
   width: 100%;
@@ -700,14 +700,18 @@ SOFTWARE.
   z-index: 100000000;
   opacity: 0;
   visibility: hidden;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
-/* line 38, ../../static_source/scss/jsConfirm/_core.scss */
+/* line 49, ../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirmBackground.show {
   opacity: 0.6;
   visibility: visible;
 }
 
-/* line 44, ../../static_source/scss/jsConfirm/_core.scss */
+/* line 55, ../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirm {
   position: absolute;
   width: 24.8rem;
@@ -718,12 +722,16 @@ SOFTWARE.
   -moz-border-radius: 0.2rem;
   -webkit-border-radius: 0.2rem;
   border-radius: 0.2rem;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
-/* line 53, ../../static_source/scss/jsConfirm/_core.scss */
+/* line 65, ../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirm .title {
   padding: 1.2rem 2rem;
 }
-/* line 56, ../../static_source/scss/jsConfirm/_core.scss */
+/* line 68, ../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirm .title .jsConfirmClose.icon {
   color: #494C4C;
   font-family: "Proxima Nova Semibold";
@@ -737,30 +745,41 @@ SOFTWARE.
   position: absolute;
   right: 0;
   top: 0;
+  float: right;
 }
-/* line 66, ../../static_source/scss/jsConfirm/_core.scss */
+/* line 79, ../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirm .description {
   color: #494C4C;
   padding: 3rem 0;
   padding-bottom: 3rem;
   border-top: 0.1rem solid #C4CACC;
   border-bottom: 0.1rem solid #C4CACC;
+  text-align: center;
 }
-/* line 73, ../../static_source/scss/jsConfirm/_core.scss */
+/* line 87, ../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirm .description span {
   display: inline-block;
   font-family: "Proxima Nova Semibold";
 }
-/* line 80, ../../static_source/scss/jsConfirm/_core.scss */
+/* line 94, ../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirm .buttons a {
   width: 50%;
   display: inline-block;
   font-size: 0.875rem;
   color: #494C4C;
+  text-align: center;
 }
-/* line 87, ../../static_source/scss/jsConfirm/_core.scss */
+/* line 102, ../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirm .buttons .proceed {
   color: #E34F4F;
   border-left: 0.1rem solid #C4CACC;
   padding: 1.4rem 0;
+}
+
+/* line 110, ../../static_source/scss/jsConfirm/_core.scss */
+.notransition {
+  -moz-transition: none, !important;
+  -o-transition: none, !important;
+  -webkit-transition: none, !important;
+  transition: none !important;
 }

@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
         callback: jsConfirmDemo.confirmCallback,
         url: "{% url 'api:fake' %}",
         title: "Delete Image",
-        text: "Are you sure you want to delete {#name#}?",
+        text: "Are you sure you want to delete {/name/}?",
         cancelText: "Cancel",
         proceedText: "Delete file",
         data: ["name", "id"],
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function() {
     jsConfirm.init('like', {
         callback: jsConfirmDemo.confirmCallbackTwo,
         title: "Like Image",
-        text: "Are you sure you want to save {#name#}?",
+        text: "Are you sure you want to save {/name/}?",
         cancelText: "Cancel",
         proceedText: "Save file",
         data: ["name", "id"]
@@ -77,10 +77,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 var jsConfirmDemo = {};
 
-jsConfirmDemo.confirmCallback = function(target) {
+jsConfirmDemo.confirmCallback = function(data) {
     "use strict";
 
-    console.log("delete");
+    console.log(data);
 };
 
 jsConfirmDemo.confirmCallbackTwo = function(target) {
