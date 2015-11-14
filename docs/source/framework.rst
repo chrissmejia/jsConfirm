@@ -49,6 +49,8 @@ Transition Helper
 
 This it's a simple but powerfull weapon to make interfaces look nicer, just add the class ``transition`` and every change in the css it's going to be distributed in 500ms.
 
+Ps: You can cancel the effect adding the class ``notransition``.
+
 ================
 Position Helpers
 ================

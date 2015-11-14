@@ -477,6 +477,14 @@ a {
   transition: all 0.5s;
 }
 
+/* line 31, ../../static_source/scss/framework/_transitions.scss */
+.notransition {
+  -moz-transition: none, !important;
+  -o-transition: none, !important;
+  -webkit-transition: none, !important;
+  transition: none !important;
+}
+
 /* line 25, ../../static_source/scss/framework/_position.scss */
 .right {
   float: right;

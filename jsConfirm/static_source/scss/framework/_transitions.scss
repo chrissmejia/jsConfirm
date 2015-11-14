@@ -27,3 +27,7 @@
 .transition {
     @include single-transition(all, 0.5s);
 }
+
+.notransition {
+    @include single-transition(none !important, null);
+}
