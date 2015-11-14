@@ -201,6 +201,7 @@ jsConfirm._createModal= function() {
     // Close icon
     var icon = document.createElement("a");
     icon.setAttribute("class", "jsConfirmClose icon");
+    icon.setAttribute("href", "#");
     modalWindow.appendChild(icon);
 
     // Title
@@ -221,12 +222,14 @@ jsConfirm._createModal= function() {
 
     var cancel = document.createElement("a");
     cancel.setAttribute("class", "cancel jsConfirmClose");
+    cancel.setAttribute("href", "#");
     cancel.innerText = "Cancel";
     buttons.appendChild(cancel);
 
     var proceed = document.createElement("a");
     proceed.setAttribute("id", "jsConfirmProceed");
     proceed.setAttribute("class", "proceed");
+    proceed.setAttribute("href", "#");
     proceed.innerText = "Delete file";
     buttons.appendChild(proceed);
 
