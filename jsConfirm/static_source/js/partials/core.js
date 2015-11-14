@@ -95,9 +95,65 @@ jsConfirm.init = function (className, settings) {
 
         if (target.getAttribute('id') === "jsConfirmProceed") {
             jsConfirm.settings[jsConfirm.window].callback(target);
-            jsConfirm._hide();
+
+            if (jsConfirm.settings[jsConfirm.window].url) { // Ajax request
+
+                var params = [];
+                var extra = jsConfirm.settings[jsConfirm.window].extra;
+                if (extra) {
+                    for (var key in extra) {
+                      if (extra.hasOwnProperty(key)) {
+                        params.push(key + "=" + extra[key]);
+                      }
+                    }
+                    console.log(params);
+                }
+
+                jsConfirm._postForm(
+                    jsConfirm.settings[jsConfirm.window].url,
+                    params,
+                    jsConfirm.settings[jsConfirm.window].callback,
+                    true
+                    );
+            }
+
+            jsConfirm._hide(); // Close modal window
         }
     };
+};
+
+
+//------------------------------------------------------------------------------------------
+// Post data to API
+//------------------------------------------------------------------------------------------
+jsConfirm._postForm = function(url, params, callback, retry) {
+    "use strict";
+    
+    var req = new XMLHttpRequest();
+
+    req.onerror = function() {
+        if (retry) {
+            setTimeout(function() {
+                jsConfirm._postForm(url, params, callback, false);
+            }, 1000);
+        }
+    };
+
+    req.onreadystatechange = function() {
+        if (req.readyState == 4) {
+            callback(req.responseText);
+        }
+    };
+
+    req.open('POST', url, true);
+    req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    if (params) {
+        var data = params.join("&");
+        req.send(data);
+    } else {
+        req.send();        
+    }
 };
 
 
