@@ -15,7 +15,7 @@
     <meta name="author" content="ChrissMejia">
     <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/app.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/app.css' %}" data-turbolinks-track>
 </head>
 <body id="{% block body_id %}{% endblock %}">
 
@@ -23,7 +23,7 @@
   <nav id="top-bar" class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
       <li class="name">
-        <a href="#"><div class="image logo"></div></a>
+        <a href="{% url 'home:index' %}"><div class="image logo"></div></a>
       </li>
     </ul>
     <ul class="right">
@@ -44,51 +44,19 @@
   </div>
 </footer>
 
-<script src="{% static 'js/jsConfirm.min.js' %}"></script>
+<script src="{% static 'turbolinks/turbolinks.js' %}" data-turbolinks-track></script>
+<script src="{% static 'js/jsConfirm.min.js' %}" data-turbolinks-track></script>
 <script>
-//------------------------------------------------------------------------------------------
-// The app
-//------------------------------------------------------------------------------------------
-document.addEventListener("DOMContentLoaded", function() {
-    "use strict";
-
-    jsConfirm.init('delete', {
-        callback: jsConfirmDemo.confirmCallback,
-        url: "{% url 'api:fake' %}",
-        title: "Delete Image",
-        text: "Are you sure you want to delete {/name/}?",
-        cancelText: "Cancel",
-        proceedText: "Delete file",
-        data: ["name", "id"],
-        extra: {
-            csrfmiddlewaretoken: "{{ csrf_token }}"
-        }
-    });
-
-    jsConfirm.init('like', {
-        callback: jsConfirmDemo.confirmCallbackTwo,
-        title: "Like Image",
-        text: "Are you sure you want to save {/name/}?",
-        cancelText: "Cancel",
-        proceedText: "Save file",
-        data: ["name", "id"]
-    });
-});
-
-var jsConfirmDemo = {};
-
-jsConfirmDemo.confirmCallback = function(data) {
-    "use strict";
-
-    console.log(data);
-};
-
-jsConfirmDemo.confirmCallbackTwo = function(target) {
-    "use strict";
-
-    console.log("like");
+//////////////////////////////
+// Don't do this on production
+// Demo purposes ONLY
+//////////////////////////////
+var appConfig = {
+    url: "{% url 'api:fake' %}",
+    csrfmiddlewaretoken: "{{ csrf_token }}"  
 };
 </script>
+<script src="{% static 'js/app.js' %}" data-turbolinks-track></script>
 {% block javascript %}{% endblock %}
 </body>
 </html>

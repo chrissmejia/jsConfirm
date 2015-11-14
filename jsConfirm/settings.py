@@ -37,11 +37,13 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'turbolinks',
     'home',
 )
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'turbolinks.middleware.TurbolinksMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -96,6 +98,8 @@ USE_L10N = True
 USE_TZ = True
 
 
+MAIN_DIR = BASE_DIR + "/jsConfirm"
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
@@ -104,3 +108,5 @@ STATIC_URL = '/static/'
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = 'http://127.0.0.1/seoshop/jsConfirm/jsConfirm/static/'
+
+STATIC_ROOT = MAIN_DIR + '/static/'

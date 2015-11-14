@@ -102,7 +102,6 @@ jsConfirm.init = function (className, settings) {
                         params.push(key + "=" + extra[key]);
                       }
                     }
-                    console.log(params);
                 }
 
                 jsConfirm._postForm(
