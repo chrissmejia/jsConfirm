@@ -391,7 +391,7 @@ jsConfirm._show = function (d, className) {
 
     // Setting title (Optional)
     if (jsConfirm.settings[className].title) {
-        var title = jsConfirm._getChildByClasses(modalWindow, "title text");
+        var title = jsConfirm._getChildByClass(modalWindow, "title");
         title.innerText = jsConfirm.settings[className].title;
     }
     // Setting text (Optional)

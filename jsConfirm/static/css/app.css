@@ -728,11 +728,7 @@ SOFTWARE.
   transition: all 0.5s;
 }
 /* line 65, ../../static_source/scss/jsConfirm/_core.scss */
-#jsConfirm .title {
-  padding: 1.2rem 2rem;
-}
-/* line 68, ../../static_source/scss/jsConfirm/_core.scss */
-#jsConfirm .title .jsConfirmClose.icon {
+#jsConfirm .jsConfirmClose.icon {
   color: #494C4C;
   font-family: "Proxima Nova Semibold";
   width: 4rem;
@@ -746,6 +742,10 @@ SOFTWARE.
   right: 0;
   top: 0;
   float: right;
+}
+/* line 75, ../../static_source/scss/jsConfirm/_core.scss */
+#jsConfirm .title {
+  padding: 1.2rem 2rem;
 }
 /* line 79, ../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirm .description {

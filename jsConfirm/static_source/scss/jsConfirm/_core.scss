@@ -62,18 +62,18 @@ SOFTWARE.
     @include border-radius(0.2rem);
     @include single-transition(all, 0.5s);
 
+    .jsConfirmClose.icon {
+	    color: $gray; 
+        font-family: "Proxima Nova Semibold";
+        @include import-image('close.png', 4rem, 3.4rem, 12.5%);
+        position: absolute;
+        right: 0;
+        top: 0;
+        float: right;
+    }
+
     .title {
         padding: 1.2rem 2rem;
-
-        .jsConfirmClose.icon {
-    	    color: $gray; 
-	        font-family: "Proxima Nova Semibold";
-	        @include import-image('close.png', 4rem, 3.4rem, 12.5%);
-            position: absolute;
-            right: 0;
-            top: 0;
-            float: right;
-        }
     }
 
     .description {
