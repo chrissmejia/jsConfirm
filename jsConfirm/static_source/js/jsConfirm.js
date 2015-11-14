@@ -326,7 +326,7 @@ jsConfirm._show = function (d, className) {
     if (jsConfirm.resized) { // Window size change
         jsConfirm._recalculate(modalWindow);
         jsConfirm._startPosition(modalWindow);
-        jsConfirm._resize = false;
+        jsConfirm.resized = false;
     }
 
     // Setting title (Optional)
