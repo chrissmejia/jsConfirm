@@ -23,11 +23,13 @@
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 #gallery {
-    padding: 4rem 0;
     background: $gallery-color;
-    position: absolute;
     height: 100%;
     width: 100%;
+
+    .content {
+        padding: 4rem 0;
+    }
 
     .picture {
         background: $white;
