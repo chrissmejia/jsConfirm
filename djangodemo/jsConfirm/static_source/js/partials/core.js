@@ -91,6 +91,7 @@ jsConfirm.init = function (className, settings) {
         }
 
         if (target.getAttribute('id') === "jsConfirmProceed") {
+
             if (jsConfirm.settings[jsConfirm.window].url) { // Ajax request
 
                 var params = [];
@@ -109,6 +110,8 @@ jsConfirm.init = function (className, settings) {
                     jsConfirm.settings[jsConfirm.window].callback,
                     true
                     );
+            } else {
+                jsConfirm.settings[jsConfirm.window].callback(target);                
             }
 
             jsConfirm._hide(); // Close modal window
