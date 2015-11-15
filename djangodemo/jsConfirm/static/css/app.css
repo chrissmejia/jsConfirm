@@ -124,22 +124,57 @@ SOFTWARE.
   font-weight: semibold;
   font-style: normal;
 }
-/* line 25, ../../static_source/scss/framework/_general.scss */
+/* line 28, ../../static_source/scss/framework/_general.scss */
 * {
   -webkit-font-smoothing: subpixel-antialiased;
   box-sizing: border-box;
 }
 
-/* line 30, ../../static_source/scss/framework/_general.scss */
+/* line 33, ../../static_source/scss/framework/_general.scss */
 body {
   font-family: "Proxima Nova", Helvetica, sans-serif;
 }
 
-/* line 34, ../../static_source/scss/framework/_general.scss */
+/* line 37, ../../static_source/scss/framework/_general.scss */
 a {
   text-decoration: none;
 }
 
+/* line 41, ../../static_source/scss/framework/_general.scss */
+.content {
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -moz-animation: show 2s ease;
+  -webkit-animation: show 2s ease;
+  animation: show 2s ease;
+}
+
+@-moz-keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /* line 1, ../../static_source/scss/framework/_grid.scss */
 .column, .columns {
   position: relative;

@@ -22,6 +22,9 @@
 // SOFTWARE.                                                                              //
 ////////////////////////////////////////////////////////////////////////////////////////////
 
+@import "compass/css3/transition";
+@import "compass/css3/animation";
+
 * {
     -webkit-font-smoothing: subpixel-antialiased;
     box-sizing: border-box;
@@ -33,4 +36,18 @@ body {
 
 a {
 	text-decoration: none;
+}
+
+.content {
+    @include single-transition(all, 0.5s);
+    @include animation(show 2s ease);
+}
+
+@include keyframes (show) {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
