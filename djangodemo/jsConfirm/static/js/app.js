@@ -3,16 +3,18 @@
 //------------------------------------------------------------------------------------------
 var jsConfirmDemo = {};
 
-jsConfirmDemo.confirmCallback = function(data) {
+jsConfirmDemo.confirmCallback = function(target, data) {
     "use strict";
 
     console.log(data);
+    console.log(target);
 };
 
-jsConfirmDemo.confirmCallbackTwo = function() {
+jsConfirmDemo.confirmCallbackTwo = function(target) {
     "use strict";
 
-    console.log("like");
+    console.log("Liked");
+    console.log(target);
 };
 
 //------------------------------------------------------------------------------------------

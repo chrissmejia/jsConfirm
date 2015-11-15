@@ -31,6 +31,7 @@ var jsConfirm = {
     cache: {}, // Don't hit the DOM at least that is strictly necessary
     settings: {},
     window: '', // Current window type, don't ask the DOM
+    target: '', // Current DOM target
     resized: false, // Avoid recalcule until is strictly necessary
 };
 
@@ -107,10 +108,10 @@ jsConfirm.init = function (className, settings) {
                     true
                     );
             } else {
-                jsConfirm.settings[jsConfirm.window].callback(target);                
+                jsConfirm.settings[jsConfirm.window].callback(jsConfirm.target);                
+                jsConfirm._hide(); // Close modal window
             }
 
-            jsConfirm._hide(); // Close modal window
         }
     };
 };
@@ -121,7 +122,7 @@ jsConfirm.init = function (className, settings) {
 //------------------------------------------------------------------------------------------
 jsConfirm._postForm = function(url, params, callback, retry) {
     "use strict";
-    
+
     var req = new XMLHttpRequest();
 
     req.onerror = function() {
@@ -134,7 +135,8 @@ jsConfirm._postForm = function(url, params, callback, retry) {
 
     req.onreadystatechange = function() {
         if (req.readyState == 4 && req.status == 200) {
-            callback(JSON.parse(req.responseText));
+            callback(jsConfirm.target, JSON.parse(req.responseText));
+            jsConfirm._hide();
         }
     };
 
@@ -507,6 +509,7 @@ jsConfirm._show = function (d, className) {
     }
 
     jsConfirm.window = className;
+    jsConfirm.target = d;
 
     jsConfirm._vCenter(modalWindow);
 };
@@ -524,4 +527,5 @@ jsConfirm._hide = function () {
     jsConfirm._removeClass(background, "show");
 
     jsConfirm.window = "";
+    jsConfirm.target = "";
 };
