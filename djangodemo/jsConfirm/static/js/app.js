@@ -9,7 +9,7 @@ jsConfirmDemo.confirmCallback = function(data) {
     console.log(data);
 };
 
-jsConfirmDemo.confirmCallbackTwo = function(target) {
+jsConfirmDemo.confirmCallbackTwo = function() {
     "use strict";
 
     console.log("like");

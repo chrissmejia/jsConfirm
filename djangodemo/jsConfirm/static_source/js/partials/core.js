@@ -70,6 +70,7 @@ jsConfirm.init = function (className, settings) {
     document.body.onclick = function(e) {
         e =e || window.event;
         var target = e.target || e.srcElement;
+            
 
         // Listen to close modal
         if (jsConfirm._hasClass(target, "jsConfirmClose")) {
@@ -90,8 +91,6 @@ jsConfirm.init = function (className, settings) {
         }
 
         if (target.getAttribute('id') === "jsConfirmProceed") {
-            jsConfirm.settings[jsConfirm.window].callback(target);
-
             if (jsConfirm.settings[jsConfirm.window].url) { // Ajax request
 
                 var params = [];
@@ -135,8 +134,8 @@ jsConfirm._postForm = function(url, params, callback, retry) {
     };
 
     req.onreadystatechange = function() {
-        if (req.readyState == 4) {
-            callback(req.responseText);
+        if (req.readyState == 4 && req.status == 200) {
+            callback(JSON.parse(req.responseText));
         }
     };
 
@@ -342,7 +341,7 @@ jsConfirm._getChildByClass = function (d, className) {
     var childNodes = d.getElementsByClassName(className);
 
     if (!childNodes.length) {
-        console.error("The element don't exists, are you sure you copy the base HTML?");        
+        console.error("The element don't exists");        
     }
 
     return childNodes[0];
