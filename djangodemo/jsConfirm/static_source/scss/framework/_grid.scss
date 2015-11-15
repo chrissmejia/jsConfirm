@@ -21,6 +21,10 @@
     }
 }
 
+a:after {
+    display: initial !important;
+}
+
 @for $i from 1 through $grid-columns {
     .small-#{$i} {
         width: ($i / $grid-columns) * 100%;

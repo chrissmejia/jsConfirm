@@ -21,11 +21,32 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE          //
 // SOFTWARE.                                                                              //
 ////////////////////////////////////////////////////////////////////////////////////////////
+@import "compass/css3/border-radius";
+@import "compass/css3/transform";
+@import "compass/css3/transition";
 
 #gallery {
     background: $gallery-color;
     height: 100%;
     width: 100%;
+
+    h1 {
+        font-size: 2rem;
+        color: shade($gallery-color, 30);
+    }
+
+    h4 {
+        font-size: 1rem;
+        color: shade($gallery-color, 30);
+
+        a {
+            color: shade($gallery-color, 30);
+            
+            &:hover {
+                color: shade($gallery-color, 70);
+            }
+        }
+    }
 
     .content {
         padding: 4rem 0;
@@ -43,67 +64,79 @@
 
         .description {
             margin: 1.5rem 0;
+            color: shade($gallery-color, 30);
         }
 
         .buttons {
             padding: 0;
 
             a {
-                width: 100%;
-			    text-align: center;
-			    display: block;
-			    padding: 0.4rem 0;
+                text-align: center;
+                display: inline-block;
+                width: 2.37rem;
+                height: 2.37rem;
+                @include single-transition(all, 0.5s);
+                @include border-radius(50%);
+                border: $gray 0.1rem solid;
+                margin: 0.7rem 0;
+
             }
         }
     }
 
-    $heart-width: 1.25rem;
-    $heart-height: 1.125rem;
+    .delete {
+        font-size: 2.3rem;
+        color: $gray;
+
+        &:hover {
+            color: $white;
+            border-color: $index-color;
+            background: $red;
+        }
+
+    }
+
+    $heart-width: 1rem;
+    $heart-height: 0.9rem;
 
     $heart-width-half: $heart-width / 2;
-	
-	.heart {
-	    position: relative;
-	    width: $heart-width;
-	    height: $heart-height;
-	    display: inline-block;
+    
+    .like {
+        position: relative;
+        margin-left: 0.8rem !important;
+        margin-right: 0.8rem !important;
+        @include single-transition(all, 0.5s);
 
-    	&:before,
-		&:after {
-		    position: absolute;
-		    content: "";
-		    left: $heart-width-half ;
-		    top: 0;
-		    width: $heart-width-half;
-		    height: $heart-height * 0.9;
-		    background: red;
-		    -moz-border-radius: $heart-width-half  $heart-width-half  0 0;
-		    border-radius: $heart-width-half  $heart-width-half  0 0;
-		    -webkit-transform: rotate(-45deg);
-		       -moz-transform: rotate(-45deg);
-		        -ms-transform: rotate(-45deg);
-		         -o-transform: rotate(-45deg);
-		            transform: rotate(-45deg);
-		    -webkit-transform-origin: 0 100%;
-		       -moz-transform-origin: 0 100%;
-		        -ms-transform-origin: 0 100%;
-		         -o-transform-origin: 0 100%;
-		            transform-origin: 0 100%;
-		}
+        &:before,
+        &:after {
+            position: absolute;
+            content: "";
+            left: $heart-width-half + 0.6rem;
+            top: 0.8rem;
+            width: $heart-width-half;
+            height: $heart-height * 0.9;
+            background: $gray;
+            @include border-radius($heart-width-half  $heart-width-half  0 0);
+            @include rotate(-45deg);
+            @include transform-origin(0 100%, null);
+            @include single-transition(all, 0.5s);
+        }
 
-		&:after {
-		    left: 0;
-		    -webkit-transform: rotate(45deg);
-		       -moz-transform: rotate(45deg);
-		        -ms-transform: rotate(45deg);
-		         -o-transform: rotate(45deg);
-		            transform: rotate(45deg);
-		    -webkit-transform-origin: 100% 100%;
-		       -moz-transform-origin: 100% 100%;
-		        -ms-transform-origin: 100% 100%;
-		         -o-transform-origin: 100% 100%;
-		            transform-origin :100% 100%;
-		}
-	}
-						
+        &:after {
+            left: 0.6rem;
+            @include rotate(45deg);
+            @include transform-origin(100% 100%, null);
+        }
+
+        &:hover {
+            background: $index-color;
+            border-color: $index-color;
+
+            &:before,
+            &:after {
+                background: $white;
+            }
+        }
+    }
+                        
 }

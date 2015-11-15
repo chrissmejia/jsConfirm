@@ -200,306 +200,311 @@ a {
   display: table;
 }
 
-/* line 25, ../../static_source/scss/framework/_grid.scss */
+/* line 24, ../../static_source/scss/framework/_grid.scss */
+a:after {
+  display: initial !important;
+}
+
+/* line 29, ../../static_source/scss/framework/_grid.scss */
 .small-1 {
   width: 8.33333%;
 }
 
-/* line 25, ../../static_source/scss/framework/_grid.scss */
+/* line 29, ../../static_source/scss/framework/_grid.scss */
 .small-2 {
   width: 16.66667%;
 }
 
-/* line 25, ../../static_source/scss/framework/_grid.scss */
+/* line 29, ../../static_source/scss/framework/_grid.scss */
 .small-3 {
   width: 25%;
 }
 
-/* line 25, ../../static_source/scss/framework/_grid.scss */
+/* line 29, ../../static_source/scss/framework/_grid.scss */
 .small-4 {
   width: 33.33333%;
 }
 
-/* line 25, ../../static_source/scss/framework/_grid.scss */
+/* line 29, ../../static_source/scss/framework/_grid.scss */
 .small-5 {
   width: 41.66667%;
 }
 
-/* line 25, ../../static_source/scss/framework/_grid.scss */
+/* line 29, ../../static_source/scss/framework/_grid.scss */
 .small-6 {
   width: 50%;
 }
 
-/* line 25, ../../static_source/scss/framework/_grid.scss */
+/* line 29, ../../static_source/scss/framework/_grid.scss */
 .small-7 {
   width: 58.33333%;
 }
 
-/* line 25, ../../static_source/scss/framework/_grid.scss */
+/* line 29, ../../static_source/scss/framework/_grid.scss */
 .small-8 {
   width: 66.66667%;
 }
 
-/* line 25, ../../static_source/scss/framework/_grid.scss */
+/* line 29, ../../static_source/scss/framework/_grid.scss */
 .small-9 {
   width: 75%;
 }
 
-/* line 25, ../../static_source/scss/framework/_grid.scss */
+/* line 29, ../../static_source/scss/framework/_grid.scss */
 .small-10 {
   width: 83.33333%;
 }
 
-/* line 25, ../../static_source/scss/framework/_grid.scss */
+/* line 29, ../../static_source/scss/framework/_grid.scss */
 .small-11 {
   width: 91.66667%;
 }
 
-/* line 25, ../../static_source/scss/framework/_grid.scss */
+/* line 29, ../../static_source/scss/framework/_grid.scss */
 .small-12 {
   width: 100%;
 }
 
 @media only screen and (min-width: 40.0001rem) {
-  /* line 32, ../../static_source/scss/framework/_grid.scss */
+  /* line 36, ../../static_source/scss/framework/_grid.scss */
   .medium-1 {
     width: 8.33333%;
   }
 
-  /* line 32, ../../static_source/scss/framework/_grid.scss */
+  /* line 36, ../../static_source/scss/framework/_grid.scss */
   .medium-2 {
     width: 16.66667%;
   }
 
-  /* line 32, ../../static_source/scss/framework/_grid.scss */
+  /* line 36, ../../static_source/scss/framework/_grid.scss */
   .medium-3 {
     width: 25%;
   }
 
-  /* line 32, ../../static_source/scss/framework/_grid.scss */
+  /* line 36, ../../static_source/scss/framework/_grid.scss */
   .medium-4 {
     width: 33.33333%;
   }
 
-  /* line 32, ../../static_source/scss/framework/_grid.scss */
+  /* line 36, ../../static_source/scss/framework/_grid.scss */
   .medium-5 {
     width: 41.66667%;
   }
 
-  /* line 32, ../../static_source/scss/framework/_grid.scss */
+  /* line 36, ../../static_source/scss/framework/_grid.scss */
   .medium-6 {
     width: 50%;
   }
 
-  /* line 32, ../../static_source/scss/framework/_grid.scss */
+  /* line 36, ../../static_source/scss/framework/_grid.scss */
   .medium-7 {
     width: 58.33333%;
   }
 
-  /* line 32, ../../static_source/scss/framework/_grid.scss */
+  /* line 36, ../../static_source/scss/framework/_grid.scss */
   .medium-8 {
     width: 66.66667%;
   }
 
-  /* line 32, ../../static_source/scss/framework/_grid.scss */
+  /* line 36, ../../static_source/scss/framework/_grid.scss */
   .medium-9 {
     width: 75%;
   }
 
-  /* line 32, ../../static_source/scss/framework/_grid.scss */
+  /* line 36, ../../static_source/scss/framework/_grid.scss */
   .medium-10 {
     width: 83.33333%;
   }
 
-  /* line 32, ../../static_source/scss/framework/_grid.scss */
+  /* line 36, ../../static_source/scss/framework/_grid.scss */
   .medium-11 {
     width: 91.66667%;
   }
 
-  /* line 32, ../../static_source/scss/framework/_grid.scss */
+  /* line 36, ../../static_source/scss/framework/_grid.scss */
   .medium-12 {
     width: 100%;
   }
 }
 @media only screen and (min-width: 64.0001rem) {
-  /* line 40, ../../static_source/scss/framework/_grid.scss */
+  /* line 44, ../../static_source/scss/framework/_grid.scss */
   .large-1 {
     width: 8.33333%;
   }
 
-  /* line 40, ../../static_source/scss/framework/_grid.scss */
+  /* line 44, ../../static_source/scss/framework/_grid.scss */
   .large-2 {
     width: 16.66667%;
   }
 
-  /* line 40, ../../static_source/scss/framework/_grid.scss */
+  /* line 44, ../../static_source/scss/framework/_grid.scss */
   .large-3 {
     width: 25%;
   }
 
-  /* line 40, ../../static_source/scss/framework/_grid.scss */
+  /* line 44, ../../static_source/scss/framework/_grid.scss */
   .large-4 {
     width: 33.33333%;
   }
 
-  /* line 40, ../../static_source/scss/framework/_grid.scss */
+  /* line 44, ../../static_source/scss/framework/_grid.scss */
   .large-5 {
     width: 41.66667%;
   }
 
-  /* line 40, ../../static_source/scss/framework/_grid.scss */
+  /* line 44, ../../static_source/scss/framework/_grid.scss */
   .large-6 {
     width: 50%;
   }
 
-  /* line 40, ../../static_source/scss/framework/_grid.scss */
+  /* line 44, ../../static_source/scss/framework/_grid.scss */
   .large-7 {
     width: 58.33333%;
   }
 
-  /* line 40, ../../static_source/scss/framework/_grid.scss */
+  /* line 44, ../../static_source/scss/framework/_grid.scss */
   .large-8 {
     width: 66.66667%;
   }
 
-  /* line 40, ../../static_source/scss/framework/_grid.scss */
+  /* line 44, ../../static_source/scss/framework/_grid.scss */
   .large-9 {
     width: 75%;
   }
 
-  /* line 40, ../../static_source/scss/framework/_grid.scss */
+  /* line 44, ../../static_source/scss/framework/_grid.scss */
   .large-10 {
     width: 83.33333%;
   }
 
-  /* line 40, ../../static_source/scss/framework/_grid.scss */
+  /* line 44, ../../static_source/scss/framework/_grid.scss */
   .large-11 {
     width: 91.66667%;
   }
 
-  /* line 40, ../../static_source/scss/framework/_grid.scss */
+  /* line 44, ../../static_source/scss/framework/_grid.scss */
   .large-12 {
     width: 100%;
   }
 }
 @media only screen and (min-width: 90.0001rem) {
-  /* line 48, ../../static_source/scss/framework/_grid.scss */
+  /* line 52, ../../static_source/scss/framework/_grid.scss */
   .xlarge-1 {
     width: 8.33333%;
   }
 
-  /* line 48, ../../static_source/scss/framework/_grid.scss */
+  /* line 52, ../../static_source/scss/framework/_grid.scss */
   .xlarge-2 {
     width: 16.66667%;
   }
 
-  /* line 48, ../../static_source/scss/framework/_grid.scss */
+  /* line 52, ../../static_source/scss/framework/_grid.scss */
   .xlarge-3 {
     width: 25%;
   }
 
-  /* line 48, ../../static_source/scss/framework/_grid.scss */
+  /* line 52, ../../static_source/scss/framework/_grid.scss */
   .xlarge-4 {
     width: 33.33333%;
   }
 
-  /* line 48, ../../static_source/scss/framework/_grid.scss */
+  /* line 52, ../../static_source/scss/framework/_grid.scss */
   .xlarge-5 {
     width: 41.66667%;
   }
 
-  /* line 48, ../../static_source/scss/framework/_grid.scss */
+  /* line 52, ../../static_source/scss/framework/_grid.scss */
   .xlarge-6 {
     width: 50%;
   }
 
-  /* line 48, ../../static_source/scss/framework/_grid.scss */
+  /* line 52, ../../static_source/scss/framework/_grid.scss */
   .xlarge-7 {
     width: 58.33333%;
   }
 
-  /* line 48, ../../static_source/scss/framework/_grid.scss */
+  /* line 52, ../../static_source/scss/framework/_grid.scss */
   .xlarge-8 {
     width: 66.66667%;
   }
 
-  /* line 48, ../../static_source/scss/framework/_grid.scss */
+  /* line 52, ../../static_source/scss/framework/_grid.scss */
   .xlarge-9 {
     width: 75%;
   }
 
-  /* line 48, ../../static_source/scss/framework/_grid.scss */
+  /* line 52, ../../static_source/scss/framework/_grid.scss */
   .xlarge-10 {
     width: 83.33333%;
   }
 
-  /* line 48, ../../static_source/scss/framework/_grid.scss */
+  /* line 52, ../../static_source/scss/framework/_grid.scss */
   .xlarge-11 {
     width: 91.66667%;
   }
 
-  /* line 48, ../../static_source/scss/framework/_grid.scss */
+  /* line 52, ../../static_source/scss/framework/_grid.scss */
   .xlarge-12 {
     width: 100%;
   }
 }
 @media only screen and (min-width: 120.0001rem) {
-  /* line 56, ../../static_source/scss/framework/_grid.scss */
+  /* line 60, ../../static_source/scss/framework/_grid.scss */
   .xxlarge-1 {
     width: 8.33333%;
   }
 
-  /* line 56, ../../static_source/scss/framework/_grid.scss */
+  /* line 60, ../../static_source/scss/framework/_grid.scss */
   .xxlarge-2 {
     width: 16.66667%;
   }
 
-  /* line 56, ../../static_source/scss/framework/_grid.scss */
+  /* line 60, ../../static_source/scss/framework/_grid.scss */
   .xxlarge-3 {
     width: 25%;
   }
 
-  /* line 56, ../../static_source/scss/framework/_grid.scss */
+  /* line 60, ../../static_source/scss/framework/_grid.scss */
   .xxlarge-4 {
     width: 33.33333%;
   }
 
-  /* line 56, ../../static_source/scss/framework/_grid.scss */
+  /* line 60, ../../static_source/scss/framework/_grid.scss */
   .xxlarge-5 {
     width: 41.66667%;
   }
 
-  /* line 56, ../../static_source/scss/framework/_grid.scss */
+  /* line 60, ../../static_source/scss/framework/_grid.scss */
   .xxlarge-6 {
     width: 50%;
   }
 
-  /* line 56, ../../static_source/scss/framework/_grid.scss */
+  /* line 60, ../../static_source/scss/framework/_grid.scss */
   .xxlarge-7 {
     width: 58.33333%;
   }
 
-  /* line 56, ../../static_source/scss/framework/_grid.scss */
+  /* line 60, ../../static_source/scss/framework/_grid.scss */
   .xxlarge-8 {
     width: 66.66667%;
   }
 
-  /* line 56, ../../static_source/scss/framework/_grid.scss */
+  /* line 60, ../../static_source/scss/framework/_grid.scss */
   .xxlarge-9 {
     width: 75%;
   }
 
-  /* line 56, ../../static_source/scss/framework/_grid.scss */
+  /* line 60, ../../static_source/scss/framework/_grid.scss */
   .xxlarge-10 {
     width: 83.33333%;
   }
 
-  /* line 56, ../../static_source/scss/framework/_grid.scss */
+  /* line 60, ../../static_source/scss/framework/_grid.scss */
   .xxlarge-11 {
     width: 91.66667%;
   }
 
-  /* line 56, ../../static_source/scss/framework/_grid.scss */
+  /* line 60, ../../static_source/scss/framework/_grid.scss */
   .xxlarge-12 {
     width: 100%;
   }
@@ -570,6 +575,11 @@ header .logo {
   display: inline-block;
   margin-top: 0.5rem;
 }
+/* line 45, ../../static_source/scss/web/_header.scss */
+header .right {
+  font-size: 1.2rem;
+  padding: 0.7rem;
+}
 
 /* line 1, ../../static_source/scss/web/_footer.scss */
 footer {
@@ -595,90 +605,161 @@ footer .logo {
   top: 0.4rem;
 }
 
-/* line 25, ../../static_source/scss/web/_index.scss */
+/* line 27, ../../static_source/scss/web/_index.scss */
 #index {
   background: #4299D4;
   height: 100%;
   width: 100%;
 }
+/* line 32, ../../static_source/scss/web/_index.scss */
+#index h1 {
+  font-size: 2rem;
+  color: #fff;
+}
+/* line 37, ../../static_source/scss/web/_index.scss */
+#index .button {
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  padding: 1rem;
+  -moz-border-radius: 3rem;
+  -webkit-border-radius: 3rem;
+  border-radius: 3rem;
+}
+/* line 44, ../../static_source/scss/web/_index.scss */
+#index .button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
 
-/* line 25, ../../static_source/scss/web/_gallery.scss */
+/* line 28, ../../static_source/scss/web/_gallery.scss */
 #gallery {
   background: #A5B3BC;
   height: 100%;
   width: 100%;
 }
-/* line 30, ../../static_source/scss/web/_gallery.scss */
+/* line 33, ../../static_source/scss/web/_gallery.scss */
+#gallery h1 {
+  font-size: 2rem;
+  color: #747d84;
+}
+/* line 38, ../../static_source/scss/web/_gallery.scss */
+#gallery h4 {
+  font-size: 1rem;
+  color: #747d84;
+}
+/* line 42, ../../static_source/scss/web/_gallery.scss */
+#gallery h4 a {
+  color: #747d84;
+}
+/* line 45, ../../static_source/scss/web/_gallery.scss */
+#gallery h4 a:hover {
+  color: #323638;
+}
+/* line 51, ../../static_source/scss/web/_gallery.scss */
 #gallery .content {
   padding: 4rem 0;
 }
-/* line 34, ../../static_source/scss/web/_gallery.scss */
+/* line 55, ../../static_source/scss/web/_gallery.scss */
 #gallery .picture {
   background: #fff;
   margin: 1rem 0.2rem;
 }
-/* line 39, ../../static_source/scss/web/_gallery.scss */
+/* line 60, ../../static_source/scss/web/_gallery.scss */
 #gallery .picture img {
   width: 100%;
   padding: 0.2rem 0.2rem 0 0.2rem;
 }
-/* line 44, ../../static_source/scss/web/_gallery.scss */
+/* line 65, ../../static_source/scss/web/_gallery.scss */
 #gallery .picture .description {
   margin: 1.5rem 0;
+  color: #747d84;
 }
-/* line 48, ../../static_source/scss/web/_gallery.scss */
+/* line 70, ../../static_source/scss/web/_gallery.scss */
 #gallery .picture .buttons {
   padding: 0;
 }
-/* line 51, ../../static_source/scss/web/_gallery.scss */
+/* line 73, ../../static_source/scss/web/_gallery.scss */
 #gallery .picture .buttons a {
-  width: 100%;
   text-align: center;
-  display: block;
-  padding: 0.4rem 0;
-}
-/* line 65, ../../static_source/scss/web/_gallery.scss */
-#gallery .heart {
-  position: relative;
-  width: 1.25rem;
-  height: 1.125rem;
   display: inline-block;
+  width: 2.37rem;
+  height: 2.37rem;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: #C0C0C0 0.1rem solid;
+  margin: 0.7rem 0;
 }
-/* line 71, ../../static_source/scss/web/_gallery.scss */
-#gallery .heart:before, #gallery .heart:after {
+/* line 87, ../../static_source/scss/web/_gallery.scss */
+#gallery .delete {
+  font-size: 2.3rem;
+  color: #C0C0C0;
+}
+/* line 91, ../../static_source/scss/web/_gallery.scss */
+#gallery .delete:hover {
+  color: #fff;
+  border-color: #4299D4;
+  background: #DF4545;
+}
+/* line 104, ../../static_source/scss/web/_gallery.scss */
+#gallery .like {
+  position: relative;
+  margin-left: 0.8rem !important;
+  margin-right: 0.8rem !important;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+/* line 110, ../../static_source/scss/web/_gallery.scss */
+#gallery .like:before, #gallery .like:after {
   position: absolute;
   content: "";
-  left: 0.625rem;
-  top: 0;
-  width: 0.625rem;
-  height: 1.0125rem;
-  background: red;
-  -moz-border-radius: 0.625rem 0.625rem 0 0;
-  border-radius: 0.625rem 0.625rem 0 0;
-  -webkit-transform: rotate(-45deg);
+  left: 1.1rem;
+  top: 0.8rem;
+  width: 0.5rem;
+  height: 0.81rem;
+  background: #C0C0C0;
+  -moz-border-radius: 0.5rem 0.5rem 0 0;
+  -webkit-border-radius: 0.5rem;
+  border-radius: 0.5rem 0.5rem 0 0;
   -moz-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  -webkit-transform-origin: 0 100%;
   -moz-transform-origin: 0 100%;
   -ms-transform-origin: 0 100%;
-  -o-transform-origin: 0 100%;
+  -webkit-transform-origin: 0 100%;
   transform-origin: 0 100%;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
-/* line 94, ../../static_source/scss/web/_gallery.scss */
-#gallery .heart:after {
-  left: 0;
-  -webkit-transform: rotate(45deg);
+/* line 125, ../../static_source/scss/web/_gallery.scss */
+#gallery .like:after {
+  left: 0.6rem;
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
-  -webkit-transform-origin: 100% 100%;
   -moz-transform-origin: 100% 100%;
   -ms-transform-origin: 100% 100%;
-  -o-transform-origin: 100% 100%;
+  -webkit-transform-origin: 100% 100%;
   transform-origin: 100% 100%;
+}
+/* line 131, ../../static_source/scss/web/_gallery.scss */
+#gallery .like:hover {
+  background: #4299D4;
+  border-color: #4299D4;
+}
+/* line 135, ../../static_source/scss/web/_gallery.scss */
+#gallery .like:hover:before, #gallery .like:hover:after {
+  background: #fff;
 }
 
 /*

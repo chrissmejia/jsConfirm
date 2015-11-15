@@ -21,9 +21,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE          //
 // SOFTWARE.                                                                              //
 ////////////////////////////////////////////////////////////////////////////////////////////
+@import "compass/css3/border-radius";
+
 
 #index {
 	background: $index-color;
 	height: 100%;
     width: 100%;
+
+    h1 {
+	    font-size: 2rem;
+	    color: $white;
+    }
+
+	.button {
+	    font-size: 1rem;
+	    background-color: rgba(0,0,0,0.3);
+        color: $white;
+        padding: 1rem;
+        @include border-radius(3rem);
+
+        &:hover {
+    	    background-color: rgba(0,0,0,0.7);        
+        }
+    }
 }

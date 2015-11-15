@@ -5,14 +5,13 @@
 {% block body_id %}index{% endblock %}
 
 {% block content %}
-  <div class="content">
+  <div class="content text-center">
     <div class="row">
-	    <h2>Welcome to jsConfirm</h2>
-	    <h3>Let's build a better world together</h3>
+	    <h1>Welcome to jsConfirm</h1>
 		</br>
 		</br>
 		</br>
-		<a href="{% url 'home:gallery' %}">Go to galllery</a>
+		<a href="{% url 'home:gallery' %}" class="button transition">Load gallery using TurboLinks</a>
 	  </div>
   </div>
 {% endblock %}

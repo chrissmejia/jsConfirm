@@ -7,27 +7,34 @@
 {% block content %}
   <div class="content">
     <div class="row">
-      <h2>Gallery</h2>
+      <div class="small-12 columns">
+        <h1>Gallery</h1>
+      </div>
       <div class="small-12 medium-6 large-4 columns">
         <div class="picture">
           <img src="{% static 'img/gallery/pic1.jpg' %}" alt="Picture 1">
           <div class="description small-12 large-8 columns">
             <h2>The image 1</h2>
           </div>
-          <div class="buttons small-12 large-4 columns">
-            <a class="like" href="#" data-name="pic1.jpg" data-id="1"><div class="heart"></div> 8</a>
-            <a class="delete" href="#" data-name="pic1.jpg" data-id="1">Delete</a>
+          <div class="buttons small-6 large-2 columns text-center">
+            <a class="like" href="#" data-name="pic1.jpg" data-id="1"></a>
+          </div>
+          <div class="buttons small-6 large-2 columns text-center">
+            <a class="delete" href="#" data-name="pic1.jpg" data-id="1">&times;</a>
           </div>
         </div>
       </div>
       <div class="small-12 medium-6 large-4 columns">
-        <div class="picture">
+        <div class="picture liked">
           <img src="{% static 'img/gallery/pic2.jpg' %}" alt="Picture 2">
           <div class="description small-12 large-8 columns">
             <h2>The image 2</h2>
           </div>
-          <div class="buttons small-12 large-4 columns">
-            <h2>IMG 1</h2>
+          <div class="buttons small-6 large-2 columns text-center">
+            <a class="like" href="#" data-name="pic2.jpg" data-id="2"></a>
+          </div>
+          <div class="buttons small-6 large-2 columns text-center">
+            <a class="delete" href="#" data-name="pic2.jpg" data-id="2">&times;</a>
           </div>
         </div>
       </div>
@@ -37,19 +44,25 @@
           <div class="description small-12 large-8 columns">
             <h2>The image 3</h2>
           </div>
-          <div class="buttons small-12 large-4 columns">
-            <h2>IMG 1</h2>
+          <div class="buttons small-6 large-2 columns text-center">
+            <a class="like" href="#" data-name="pic3.jpg" data-id="3"></a>
+          </div>
+          <div class="buttons small-6 large-2 columns text-center">
+            <a class="delete" href="#" data-name="pic3.jpg" data-id="3">&times;</a>
           </div>
         </div>
       </div>
       <div class="small-12 medium-6 large-4 columns">
-        <div class="picture">
+        <div class="picture liked">
           <img src="{% static 'img/gallery/pic4.jpg' %}" alt="Picture 4">
           <div class="description small-12 large-8 columns">
             <h2>The image 4</h2>
           </div>
-          <div class="buttons small-12 large-4 columns">
-            <h2>IMG 1</h2>
+          <div class="buttons small-6 large-2 columns text-center">
+            <a class="like" href="#" data-name="pic4.jpg" data-id="4"></a>
+          </div>
+          <div class="buttons small-6 large-2 columns text-center">
+            <a class="delete" href="#" data-name="pic4.jpg" data-id="4">&times;</a>
           </div>
         </div>
       </div>
@@ -59,8 +72,11 @@
           <div class="description small-12 large-8 columns">
             <h2>The image 5</h2>
           </div>
-          <div class="buttons small-12 large-4 columns">
-            <h2>IMG 1</h2>
+          <div class="buttons small-6 large-2 columns text-center">
+            <a class="like" href="#" data-name="pic5.jpg" data-id="5"></a>
+          </div>
+          <div class="buttons small-6 large-2 columns text-center">
+            <a class="delete" href="#" data-name="pic5.jpg" data-id="5">&times;</a>
           </div>
         </div>
       </div>
@@ -70,12 +86,19 @@
           <div class="description small-12 large-8 columns">
             <h2>The image 6</h2>
           </div>
-          <div class="buttons small-12 large-4 columns">
-            <h2>IMG 1</h2>
+          <div class="buttons small-6 large-2 columns text-center">
+            <a class="like" href="#" data-name="pic6.jpg" data-id="6"></a>
+          </div>
+          <div class="buttons small-6 large-2 columns text-center">
+            <a class="delete" href="#" data-name="pic6.jpg" data-id="6">&times;</a>
           </div>
         </div>
       </div>
-    <h4 class="text-center">Images courtesy of https://stocksnap.io/</h4>
+      <div class="row">
+        <div class="small-12 columns">
+          <h4 class="text-center">Images courtesy of <a href="https://stocksnap.io/" class="transition">https://stocksnap.io/</a></h4>
+        </div>
+      </div>
     </div>
   </div>
 {% endblock %}
