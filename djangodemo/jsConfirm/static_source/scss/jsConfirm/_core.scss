@@ -56,7 +56,7 @@ SOFTWARE.
 #jsConfirm {
     font-family: "Proxima Nova", Helvetica, sans-serif;  
     position: absolute;	
-    width: 24.8rem;
+    width: 90%;
     top: -30rem;
     background: $jsConfirm-white;
     z-index: 100000000000;
@@ -90,8 +90,7 @@ SOFTWARE.
 
     .description {
 	    color: $jsConfirm-gray;
-	    padding: 3rem 0; 
-	    padding-bottom: 3rem;
+	    padding: 3rem 1rem;
 	    border-top: 0.1rem solid $jsConfirm-inner-border-color;
 	    border-bottom: 0.1rem solid $jsConfirm-inner-border-color;
 	    text-align: center;
@@ -124,4 +123,10 @@ SOFTWARE.
 
 .notransition {
     @include single-transition(none !important, null);
+}
+
+@media #{$medium-up} { 
+    #jsConfirm {
+        width: 24.8rem;
+    }
 }
