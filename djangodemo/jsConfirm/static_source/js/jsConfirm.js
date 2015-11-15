@@ -31,10 +31,8 @@ var jsConfirm = {
     cache: {}, // Don't hit the DOM at least that is strictly necessary
     settings: {},
     window: '', // Current window type, don't ask the DOM
-    resized: false//, // Avoid recalcule until is strictly necessary
-//    resolution: {}
+    resized: false, // Avoid recalcule until is strictly necessary
 };
-
 
 //------------------------------------------------------------------------------------------
 // Setup the window
@@ -44,10 +42,8 @@ jsConfirm.init = function (className, settings) {
 
     // Run only the first time
     if (!Object.keys(jsConfirm.settings).length) {
-        
-        window.onresize = function() {
-            jsConfirm._resize();
-        };
+
+        window.addEventListener("resize", jsConfirm._resize, false);
     }
 
     // Checking if it's already initialized
@@ -400,7 +396,7 @@ jsConfirm._modalWidth = function (d) {
 jsConfirm._modalHeight = function (d) {
     "use strict";
 
-    return parseInt(window.getComputedStyle(d).height, 10); // modal width
+    return parseInt(window.getComputedStyle(d).height, 10); // modal height
 };
 
 //------------------------------------------------------------------------------------------
