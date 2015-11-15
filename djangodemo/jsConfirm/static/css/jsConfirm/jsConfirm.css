@@ -102,13 +102,21 @@ SOFTWARE.
 /* line 68, ../../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirm a {
   text-decoration: none;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 /* line 72, ../../../static_source/scss/jsConfirm/_core.scss */
+#jsConfirm a:hover {
+  background-color: #E7E7E7;
+}
+/* line 77, ../../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirm .jsConfirmClose.icon {
   color: #494C4C;
   font-family: "Proxima Nova Semibold", Helvetica, sans-serif;
   width: 4rem;
-  height: 3.4rem;
+  height: 3.46rem;
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIpJREFUeNqET0EKwkAQS8Z+wy/ppUcpnvoKj+IjPEnxVD3Y1RfpL4Ru3NGtLHgwMDAkTDJhf7vuELWi4qZeLDsknMPQiLaF8cg+hDvJeeKVpsUH+zSU9Kj8EpwdnMgC8i7XLNu22YGT6Jxrhj/gabg0sG+EygjEcW3vbwvbMs61yqvot+ZzqvkSYACvWD5CIXSeBAAAAABJRU5ErkJggg==');
   background-repeat: no-repeat;
   background-position: center;
@@ -119,11 +127,11 @@ SOFTWARE.
   top: 0;
   float: right;
 }
-/* line 82, ../../../static_source/scss/jsConfirm/_core.scss */
+/* line 87, ../../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirm .title {
   padding: 1.2rem 2rem;
 }
-/* line 86, ../../../static_source/scss/jsConfirm/_core.scss */
+/* line 91, ../../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirm .description {
   color: #494C4C;
   padding: 3rem 0;
@@ -132,12 +140,12 @@ SOFTWARE.
   border-bottom: 0.1rem solid #C4CACC;
   text-align: center;
 }
-/* line 94, ../../../static_source/scss/jsConfirm/_core.scss */
+/* line 99, ../../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirm .description span {
   display: inline-block;
   font-family: "Proxima Nova Semibold";
 }
-/* line 102, ../../../static_source/scss/jsConfirm/_core.scss */
+/* line 107, ../../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirm .buttons a {
   box-sizing: border-box;
   width: 50%;
@@ -145,15 +153,16 @@ SOFTWARE.
   font-size: 0.875rem;
   color: #494C4C;
   text-align: center;
+  padding: 1.4rem 0;
+  margin-bottom: 0.08rem;
 }
-/* line 111, ../../../static_source/scss/jsConfirm/_core.scss */
+/* line 118, ../../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirm .buttons .proceed {
   color: #E34F4F;
   border-left: 0.1rem solid #C4CACC;
-  padding: 1.4rem 0;
 }
 
-/* line 119, ../../../static_source/scss/jsConfirm/_core.scss */
+/* line 125, ../../../static_source/scss/jsConfirm/_core.scss */
 .notransition {
   -moz-transition: none, !important;
   -o-transition: none, !important;

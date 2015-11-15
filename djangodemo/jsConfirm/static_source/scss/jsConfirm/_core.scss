@@ -41,7 +41,7 @@ SOFTWARE.
     height: 100%;
     top: 0;
     left: 0;
-    background: $black;
+    background: $jsConfirm-black;
     z-index: 100000000;
     opacity: 0;
     visibility: hidden;
@@ -58,21 +58,26 @@ SOFTWARE.
     position: absolute;	
     width: 24.8rem;
     top: -30rem;
-    background: $white;
+    background: $jsConfirm-white;
     z-index: 100000000000;
-    border: 0.1rem solid $window-border-color;
+    border: 0.1rem solid $jsConfirm-window-border-color;
     box-sizing: border-box;
     @include border-radius(0.2rem);
     @include single-transition(all, 0.5s);
 
     a {
         text-decoration: none;
+        @include single-transition(all, 0.5s);
+
+        &:hover {
+            background-color: $jsConfirm-hover;
+        }
     }
 
     .jsConfirmClose.icon {
-	    color: $gray; 
+	    color: $jsConfirm-gray; 
         font-family: "Proxima Nova Semibold", Helvetica, sans-serif;
-        @include import-image('close.png', 4rem, 3.4rem, 12.5%);
+        @include import-image('close.png', 4rem, 3.46rem, 12.5%);
         position: absolute;
         right: 0;
         top: 0;
@@ -84,11 +89,11 @@ SOFTWARE.
     }
 
     .description {
-	    color: $gray;
+	    color: $jsConfirm-gray;
 	    padding: 3rem 0; 
 	    padding-bottom: 3rem;
-	    border-top: 0.1rem solid $inner-border-color;
-	    border-bottom: 0.1rem solid $inner-border-color;
+	    border-top: 0.1rem solid $jsConfirm-inner-border-color;
+	    border-bottom: 0.1rem solid $jsConfirm-inner-border-color;
 	    text-align: center;
 
 	    span {
@@ -104,14 +109,15 @@ SOFTWARE.
             width: 50%;
             display: inline-block;
             font-size: 0.875rem;
-    	    color: $gray;
+    	    color: $jsConfirm-gray;
     	    text-align: center;
+            padding: 1.4rem 0;
+            margin-bottom: 0.08rem;
         }
 
         .proceed {
-            color: $red;
-            border-left: 0.1rem solid $inner-border-color;
-            padding: 1.4rem 0;
+            color: $jsConfirm-red;
+            border-left: 0.1rem solid $jsConfirm-inner-border-color;
         }
     }
 }
