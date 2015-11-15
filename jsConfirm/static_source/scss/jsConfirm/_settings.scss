@@ -22,6 +22,32 @@
 // SOFTWARE.                                                                              //
 ////////////////////////////////////////////////////////////////////////////////////////////
 
+@import "compass/css3/font-face";
+
+@include font-face(
+    "Proxima Nova", 
+    inline-font-files(
+        "proximanova-regular-webfont.woff",
+        "proximanova-regular-webfont.ttf", 
+        "proximanova-regular-webfont.svg"
+    ), 
+    "proximanova-regular-webfont.eot",
+    normal, // font-weight
+    normal  // font-style
+);
+
+@include font-face(
+    "Proxima Nova Semibold", 
+    inline-font-files(
+        "proximanova-semibold-webfont.woff",
+        "proximanova-semibold-webfont.ttf", 
+        "proximanova-semibold-webfont.svg"
+    ), 
+    "proximanova-semibold-webfont.eot",
+    semibold, // font-weight
+    normal  // font-style
+);
+
 $black: #000;
 $white: #fff;
 $gray: #494C4C;

@@ -40,6 +40,7 @@ SOFTWARE.
     width: 100%;
     height: 100%;
     top: 0;
+    left: 0;
     background: $black;
     z-index: 100000000;
     opacity: 0;
@@ -53,18 +54,24 @@ SOFTWARE.
 }
 
 #jsConfirm {
+    font-family: "Proxima Nova", Helvetica, sans-serif;  
     position: absolute;	
     width: 24.8rem;
     top: -30rem;
     background: $white;
     z-index: 100000000000;
     border: 0.1rem solid $window-border-color;
+    box-sizing: border-box;
     @include border-radius(0.2rem);
     @include single-transition(all, 0.5s);
 
+    a {
+        text-decoration: none;
+    }
+
     .jsConfirmClose.icon {
 	    color: $gray; 
-        font-family: "Proxima Nova Semibold";
+        font-family: "Proxima Nova Semibold", Helvetica, sans-serif;
         @include import-image('close.png', 4rem, 3.4rem, 12.5%);
         position: absolute;
         right: 0;
@@ -91,7 +98,9 @@ SOFTWARE.
     }
 
     .buttons {
+
         a {
+            box-sizing: border-box;
             width: 50%;
             display: inline-block;
             font-size: 0.875rem;
