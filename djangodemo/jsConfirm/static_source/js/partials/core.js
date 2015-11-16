@@ -93,6 +93,7 @@ jsConfirm._click = function(e) {
         if (jsConfirm._hasClass(target, modal)) {
             jsConfirm._show(target, modal);
             jsConfirm._preventDefault(e);
+            return;
         }
     }
 
