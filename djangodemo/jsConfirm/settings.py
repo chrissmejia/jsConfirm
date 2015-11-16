@@ -107,6 +107,6 @@ STATIC_URL = '/static/'
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = 'http://127.0.0.1/seoshop/djangodemo/jsConfirm/static/'
+STATIC_URL = 'http://127.0.0.1/jsConfirm/djangodemo/jsConfirm/static/'
 
 STATIC_ROOT = MAIN_DIR + '/static/'
