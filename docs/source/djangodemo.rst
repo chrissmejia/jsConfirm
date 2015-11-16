@@ -8,7 +8,7 @@ This is a light django demo to fully test the component, uses Turbolink and it h
 Start
 ============
 
-You can find a live running demo at: `ChrissMejía.com/seoshop/jsConfirm/ <https://www.chrissmejia.com/seoshop/jsConfirm/>`_ or you can install your `own enviroment <djangoinstall.html>`_ .
+You can find a live running demo at: `52.91.90.46 <http://52.91.90.46/>`_ or you can install your `own enviroment <djangoinstall.html>`_ .
 
 
 ============

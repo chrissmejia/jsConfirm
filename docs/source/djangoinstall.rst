@@ -28,4 +28,4 @@ Every time
 * Move to the project folder (manage.py should be there)
 * Activate virtualenv ``python manage.py runserver``
 
-PS: Your application should be responding for static files at: ``http://127.0.0.1/seoshop/jsConfirm/``
+PS: Your application should be responding for static files at: ``http://127.0.0.1/`` and the application should be placed inside a folder named ``seoshop`` in that way django can read this address: ``http://127.0.0.1/seoshop/djangodemo/jsConfirm/static/``
