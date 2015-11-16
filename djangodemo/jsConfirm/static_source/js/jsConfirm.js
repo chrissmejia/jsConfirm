@@ -41,12 +41,6 @@ var jsConfirm = {
 jsConfirm.init = function (className, settings) {
     "use strict";
 
-    // Run only the first time
-    if (!Object.keys(jsConfirm.settings).length) {
-
-        window.addEventListener("resize", jsConfirm._resize, false);
-    }
-
     // Checking if it's already initialized
     if (className in jsConfirm.settings) {
         console.error(className + " is already initialized");
@@ -57,6 +51,12 @@ jsConfirm.init = function (className, settings) {
     if (typeof settings.callback !== "function") {
         console.error("Callback it's not provided for " + className);
         return;
+    }
+
+    // Run only the first time
+    if (!Object.keys(jsConfirm.settings).length) {
+
+        window.addEventListener("resize", jsConfirm._resize, false);
     }
     
     // Initializing element
