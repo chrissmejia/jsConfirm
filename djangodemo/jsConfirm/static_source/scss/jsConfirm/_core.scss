@@ -125,7 +125,7 @@ SOFTWARE.
     @include single-transition(none !important, null);
 }
 
-@media #{$medium-up} { 
+@media only screen and (min-width: 40.0001rem) {
     #jsConfirm {
         width: 24.8rem;
     }
