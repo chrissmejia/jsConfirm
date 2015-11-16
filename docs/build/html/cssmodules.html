@@ -1,0 +1,276 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Framework &mdash; jsConfirm 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="jsConfirm 0.1 documentation" href="index.html"/>
+        <link rel="next" title="Framework" href="framework.html"/>
+        <link rel="prev" title="JS the component" href="jscomponent.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> jsConfirm
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howitworks.html">How it works</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compass.html">CSS first steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="grunt.html">JS first steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jscomponent.html">JS the component</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Framework</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-grid">The grid</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mobile-first">Mobile first</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#media-queries">Media Queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#transition-helper">Transition Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#position-helpers">Position Helpers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#floating">Floating</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#text-position">Text position</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="framework.html">Framework</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">jsConfirm</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Framework</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/cssmodules.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="framework">
+<h1>Framework<a class="headerlink" href="#framework" title="Permalink to this headline">¶</a></h1>
+<p>This is a light reusable framework coded for this test.</p>
+<div class="section" id="the-grid">
+<h2>The grid<a class="headerlink" href="#the-grid" title="Permalink to this headline">¶</a></h2>
+<p>The grid it&#8217;s Foundations compatible with 12 columns and 5 sizes (<code class="docutils literal"><span class="pre">small</span></code>, <code class="docutils literal"><span class="pre">medium</span></code>, <code class="docutils literal"><span class="pre">large</span></code>, <code class="docutils literal"><span class="pre">xlarge</span></code> and <code class="docutils literal"><span class="pre">xxlarge</span></code>), the number of columns and the sizes can be combiled to generate responsive web pages in a really easy way.</p>
+<p>E.g.: You can set the class of a div to <code class="docutils literal"><span class="pre">small-12</span> <span class="pre">medium-8</span> <span class="pre">large-6</span> <span class="pre">xlarge-4</span> <span class="pre">xxlarge-3</span></code> then, for small devices like mobile phones it&#8217;s going to have a width of 100%, for tablets-like a width of 66.66%, 50% for pc-like devices and so on.</p>
+<div class="section" id="mobile-first">
+<h3>Mobile first<a class="headerlink" href="#mobile-first" title="Permalink to this headline">¶</a></h3>
+<p>The grid follows the <code class="docutils literal"><span class="pre">Mobile</span> <span class="pre">First</span></code> technique, you should start coding the mobile version first, after that you start grown the screen and make adjustments using media queries.</p>
+<p>Following this principle, <code class="docutils literal"><span class="pre">small-12</span></code> it&#8217;s going to set the width to 100% in every size, and it&#8217;s only going to be rewrite if it need it, then <code class="docutils literal"><span class="pre">small-12</span> <span class="pre">large-6</span></code> set width to 100% for small and medium and it&#8217;s rewrite to 50% in large and bigger sizes.</p>
+</div>
+</div>
+<div class="section" id="media-queries">
+<h2>Media Queries<a class="headerlink" href="#media-queries" title="Permalink to this headline">¶</a></h2>
+<p>To make the life easier, the media queries are already set for you, and can be called like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="nd">@media</span> <span class="c">#{$small-up} { }</span>
+<span class="nd">@media</span> <span class="c">#{$small-only} { }</span>
+
+<span class="nd">@media</span> <span class="c">#{$medium-up} { }</span>
+<span class="nd">@media</span> <span class="c">#{$medium-only} { }</span>
+
+<span class="nd">@media</span> <span class="c">#{$large-up} { }</span>
+<span class="nd">@media</span> <span class="c">#{$large-only} { }</span>
+
+<span class="nd">@media</span> <span class="c">#{$xlarge-up} { }</span>
+<span class="nd">@media</span> <span class="c">#{$xlarge-only} { }</span>
+
+<span class="nd">@media</span> <span class="c">#{$xxlarge-up} { }</span>
+<span class="nd">@media</span> <span class="c">#{$xxlarge-only} { }</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="transition-helper">
+<h2>Transition Helper<a class="headerlink" href="#transition-helper" title="Permalink to this headline">¶</a></h2>
+<p>This it&#8217;s a simple but powerfull weapon to make interfaces look nicer, just add the class <code class="docutils literal"><span class="pre">transition</span></code> and every change in the css it&#8217;s going to be distributed in 500ms.</p>
+<p>Ps: You can cancel the effect adding the class <code class="docutils literal"><span class="pre">notransition</span></code>.</p>
+</div>
+<div class="section" id="position-helpers">
+<h2>Position Helpers<a class="headerlink" href="#position-helpers" title="Permalink to this headline">¶</a></h2>
+<p>Positioning text of objects it&#8217;s a regular task than can be automaticed using helpers, in this way your css it&#8217;s going to be smaller.</p>
+<div class="section" id="floating">
+<h3>Floating<a class="headerlink" href="#floating" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Right <code class="docutils literal"><span class="pre">right</span></code></li>
+<li>Left <code class="docutils literal"><span class="pre">left</span></code></li>
+</ul>
+</div>
+<div class="section" id="text-position">
+<h3>Text position<a class="headerlink" href="#text-position" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Left <code class="docutils literal"><span class="pre">text-left</span></code></li>
+<li>Center <code class="docutils literal"><span class="pre">text-center</span></code></li>
+<li>Right <code class="docutils literal"><span class="pre">text-right</span></code></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="framework.html" class="btn btn-neutral float-right" title="Framework" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="jscomponent.html" class="btn btn-neutral" title="JS the component" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Chriss Mejía.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
