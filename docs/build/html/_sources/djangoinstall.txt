@@ -1,8 +1,6 @@
-########################
-Start
-########################
-
-This is the developer documentation for jsConfirm
+##########################
+Django Environment Install
+##########################
 
 ==============
 Requirements

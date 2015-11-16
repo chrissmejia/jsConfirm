@@ -14,11 +14,13 @@ Contents:
    start
    howitworks
    compass
-   cssmodules
-   framework
+   csscomponent
    grunt
    jscomponent
    jshelpers
+   djangodemo
+   framework
+   djangoinstall
 
 
 Indices and tables

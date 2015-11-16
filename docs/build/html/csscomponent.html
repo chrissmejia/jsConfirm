@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Start &mdash; jsConfirm 0.1 documentation</title>
+  <title>CSS component &mdash; jsConfirm 0.1 documentation</title>
   
 
   
@@ -31,8 +31,8 @@
 
   
     <link rel="top" title="jsConfirm 0.1 documentation" href="index.html"/>
-        <link rel="next" title="How it works" href="howitworks.html"/>
-        <link rel="prev" title="Welcome to jsConfirm’s documentation!" href="index.html"/> 
+        <link rel="next" title="JS first steps" href="grunt.html"/>
+        <link rel="prev" title="CSS first steps" href="compass.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -82,19 +82,14 @@
             
             
                 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">Start</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#why-django">Why Django?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-run-it">How to run it?</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#first-time-only">First time only</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#every-time">Every time</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="start.html">Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="howitworks.html">How it works</a></li>
 <li class="toctree-l1"><a class="reference internal" href="compass.html">CSS first steps</a></li>
-<li class="toctree-l1"><a class="reference internal" href="csscomponent.html">CSS component</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">CSS component</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#include">Include</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="grunt.html">JS first steps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jscomponent.html">JS core</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jshelpers.html">JS helpers</a></li>
@@ -131,11 +126,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Start</li>
+    <li>CSS component</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/start.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/csscomponent.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -145,40 +140,23 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="start">
-<h1>Start<a class="headerlink" href="#start" title="Permalink to this headline">¶</a></h1>
-<p>This is the developer documentation for jsConfirm</p>
-<div class="section" id="why-django">
-<h2>Why Django?<a class="headerlink" href="#why-django" title="Permalink to this headline">¶</a></h2>
-<p>It contains a little django app to test how it works in <a class="reference external" href="https://github.com/rails/turbolinks">TurboLinks</a> scenario, I don&#8217;t know Ruby then I choose to change it because it&#8217;s not required in the job description, but I can switch the backend if it&#8217;s need it.</p>
-</div>
+  <div class="section" id="css-component">
+<h1>CSS component<a class="headerlink" href="#css-component" title="Permalink to this headline">¶</a></h1>
+<p>This css it&#8217;s self contain, you don&#8217;t need the rest of the modules to use it.</p>
 <div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Python 3 <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">python3</span></code></li>
-<li><a class="reference external" href="http://docs.python-guide.org/en/latest/dev/virtualenvs/">VirtualEnvs</a></li>
+<li><a class="reference external" href="https://www.ruby-lang.org/en/downloads/">Ruby</a></li>
+<li><a class="reference external" href="http://compass-style.org/install/">Compass</a></li>
 </ul>
 </div>
-<div class="section" id="how-to-run-it">
-<h2>How to run it?<a class="headerlink" href="#how-to-run-it" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="first-time-only">
-<h3>First time only<a class="headerlink" href="#first-time-only" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="include">
+<h2>Include<a class="headerlink" href="#include" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Create an python3 virtualenv <code class="docutils literal"><span class="pre">virtualenv</span> <span class="pre">-p</span> <span class="pre">python3</span> <span class="pre">~/.virtualenvs/jsConfirm</span></code></li>
-<li>Activate virtualenv <code class="docutils literal"><span class="pre">source</span> <span class="pre">~/.virtualenvs/jsConfirm/bin/activate</span></code></li>
-<li>Move to the project folder (requirements.txt should be there)</li>
-<li>Install pip dependences <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code></li>
+<li>Copy <code class="docutils literal"><span class="pre">djangodemo/jsConfirm/static_source/scss/jsConfirm</span></code> to your scss folder</li>
+<li>Copy <code class="docutils literal"><span class="pre">djangodemo/jsConfirm/static_source/img/close.png</span></code> to your image folder</li>
+<li>Include <code class="docutils literal"><span class="pre">jsConfirm.scss</span></code> in your project</li>
 </ul>
-</div>
-<div class="section" id="every-time">
-<h3>Every time<a class="headerlink" href="#every-time" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Activate virtualenv <code class="docutils literal"><span class="pre">source</span> <span class="pre">~/.virtualenvs/jsConfirm/bin/activate</span></code></li>
-<li>Move to the project folder (manage.py should be there)</li>
-<li>Activate virtualenv <code class="docutils literal"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">runserver</span></code></li>
-</ul>
-<p>PS: Your application should be responding for static files at: <code class="docutils literal"><span class="pre">http://127.0.0.1/seoshop/jsConfirm/</span></code></p>
-</div>
 </div>
 </div>
 
@@ -189,10 +167,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="howitworks.html" class="btn btn-neutral float-right" title="How it works" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="grunt.html" class="btn btn-neutral float-right" title="JS first steps" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Welcome to jsConfirm’s documentation!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="compass.html" class="btn btn-neutral" title="CSS first steps" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

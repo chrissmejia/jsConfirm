@@ -41,12 +41,10 @@ Web module
 
 Organized CSS for the django demo
 
-`See web module specifics <webcss.html>`_
-
 ----------
 jsConfirm
 ----------
 
 The most important module it's named jsConfirm and it's special because it's self contain, you don't need the rest of the modules to use it.
 
-`See component css specifics <jsConfirmCSS.html>`_
+`See component css specifics <csscomponent.html>`_

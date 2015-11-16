@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Start &mdash; jsConfirm 0.1 documentation</title>
+  <title>Django Demo &mdash; jsConfirm 0.1 documentation</title>
   
 
   
@@ -31,8 +31,8 @@
 
   
     <link rel="top" title="jsConfirm 0.1 documentation" href="index.html"/>
-        <link rel="next" title="How it works" href="howitworks.html"/>
-        <link rel="prev" title="Welcome to jsConfirm’s documentation!" href="index.html"/> 
+        <link rel="next" title="Django Demo CSS Framework" href="framework.html"/>
+        <link rel="prev" title="JS helpers" href="jshelpers.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -82,23 +82,25 @@
             
             
                 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">Start</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#why-django">Why Django?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#how-to-run-it">How to run it?</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#first-time-only">First time only</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#every-time">Every time</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="start.html">Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="howitworks.html">How it works</a></li>
 <li class="toctree-l1"><a class="reference internal" href="compass.html">CSS first steps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="csscomponent.html">CSS component</a></li>
 <li class="toctree-l1"><a class="reference internal" href="grunt.html">JS first steps</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jscomponent.html">JS core</a></li>
 <li class="toctree-l1"><a class="reference internal" href="jshelpers.html">JS helpers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="djangodemo.html">Django Demo</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Django Demo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#start">Start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#why-django">Why Django?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fake-api">Fake API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#css">CSS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#js">JS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#app-js">App.js</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#the-base-html">The base html</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="framework.html">Django Demo CSS Framework</a></li>
 <li class="toctree-l1"><a class="reference internal" href="djangoinstall.html">Django Environment Install</a></li>
 </ul>
@@ -131,11 +133,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Start</li>
+    <li>Django Demo</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/start.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/djangodemo.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -145,39 +147,35 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="start">
-<h1>Start<a class="headerlink" href="#start" title="Permalink to this headline">¶</a></h1>
-<p>This is the developer documentation for jsConfirm</p>
+  <div class="section" id="django-demo">
+<h1>Django Demo<a class="headerlink" href="#django-demo" title="Permalink to this headline">¶</a></h1>
+<p>This is a light django demo to fully test the component, uses Turbolink and it has it&#8217;s own fake API.</p>
+<div class="section" id="start">
+<h2>Start<a class="headerlink" href="#start" title="Permalink to this headline">¶</a></h2>
+<p>You can find a live running demo at: <a class="reference external" href="https://www.chrissmejia.com/seoshop/jsConfirm/">ChrissMejía.com/seoshop/jsConfirm/</a> or you can install your <a class="reference external" href="djangoinstall.html">own enviroment</a> .</p>
+</div>
 <div class="section" id="why-django">
 <h2>Why Django?<a class="headerlink" href="#why-django" title="Permalink to this headline">¶</a></h2>
 <p>It contains a little django app to test how it works in <a class="reference external" href="https://github.com/rails/turbolinks">TurboLinks</a> scenario, I don&#8217;t know Ruby then I choose to change it because it&#8217;s not required in the job description, but I can switch the backend if it&#8217;s need it.</p>
 </div>
-<div class="section" id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Python 3 <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">python3</span></code></li>
-<li><a class="reference external" href="http://docs.python-guide.org/en/latest/dev/virtualenvs/">VirtualEnvs</a></li>
-</ul>
+<div class="section" id="fake-api">
+<h2>Fake API<a class="headerlink" href="#fake-api" title="Permalink to this headline">¶</a></h2>
+<p>With the app there&#8217;s a fake API how always return the same objet to test the JSON responses.</p>
 </div>
-<div class="section" id="how-to-run-it">
-<h2>How to run it?<a class="headerlink" href="#how-to-run-it" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="first-time-only">
-<h3>First time only<a class="headerlink" href="#first-time-only" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Create an python3 virtualenv <code class="docutils literal"><span class="pre">virtualenv</span> <span class="pre">-p</span> <span class="pre">python3</span> <span class="pre">~/.virtualenvs/jsConfirm</span></code></li>
-<li>Activate virtualenv <code class="docutils literal"><span class="pre">source</span> <span class="pre">~/.virtualenvs/jsConfirm/bin/activate</span></code></li>
-<li>Move to the project folder (requirements.txt should be there)</li>
-<li>Install pip dependences <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code></li>
-</ul>
+<div class="section" id="css">
+<h2>CSS<a class="headerlink" href="#css" title="Permalink to this headline">¶</a></h2>
+<p>The demo uses 2 CSS modules, a light reusable and reusable <a class="reference external" href="framework.html">framework</a> and it&#8217;s own specific.</p>
 </div>
-<div class="section" id="every-time">
-<h3>Every time<a class="headerlink" href="#every-time" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Activate virtualenv <code class="docutils literal"><span class="pre">source</span> <span class="pre">~/.virtualenvs/jsConfirm/bin/activate</span></code></li>
-<li>Move to the project folder (manage.py should be there)</li>
-<li>Activate virtualenv <code class="docutils literal"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">runserver</span></code></li>
-</ul>
-<p>PS: Your application should be responding for static files at: <code class="docutils literal"><span class="pre">http://127.0.0.1/seoshop/jsConfirm/</span></code></p>
+<div class="section" id="js">
+<h2>JS<a class="headerlink" href="#js" title="Permalink to this headline">¶</a></h2>
+<p>There&#8217;s 2 places where you can find specific js for the demo</p>
+<div class="section" id="app-js">
+<h3>App.js<a class="headerlink" href="#app-js" title="Permalink to this headline">¶</a></h3>
+<p>Contains the <code class="docutils literal"><span class="pre">Inits</span></code> and <code class="docutils literal"><span class="pre">Callbacks</span></code>, and also a cool effect to center content for big screens.</p>
+</div>
+<div class="section" id="the-base-html">
+<h3>The base html<a class="headerlink" href="#the-base-html" title="Permalink to this headline">¶</a></h3>
+<p>It&#8217;s there to set the <code class="docutils literal"><span class="pre">API</span> <span class="pre">URL</span></code> and <code class="docutils literal"><span class="pre">csrf</span></code>, it was placed there just for tests, don&#8217;t do this in production.</p>
 </div>
 </div>
 </div>
@@ -189,10 +187,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="howitworks.html" class="btn btn-neutral float-right" title="How it works" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="framework.html" class="btn btn-neutral float-right" title="Django Demo CSS Framework" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Welcome to jsConfirm’s documentation!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="jshelpers.html" class="btn btn-neutral" title="JS helpers" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

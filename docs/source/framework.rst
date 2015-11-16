@@ -1,6 +1,6 @@
-########################
-Framework
-########################
+#########################
+Django Demo CSS Framework
+#########################
 
 This is a light reusable framework coded for this test.
 
