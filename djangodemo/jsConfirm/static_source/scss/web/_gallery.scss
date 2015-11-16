@@ -82,6 +82,31 @@
 
             }
         }
+
+
+        &.liked .like {
+            background: $white;
+
+            &:before,
+            &:after {
+                background: $red;
+            }
+
+            &:hover {
+                &:before,
+                &:after {
+                    left: 1.14rem;
+                    height: 1rem;
+                    width: 0.3rem;
+                    top: 0.5rem;
+                    @include transform-origin(0 null, null);
+                    @include rotate(90deg);
+                    @include border-radius(1rem);
+                }
+
+            }
+        }
+
     }
 
     .delete {

@@ -67,11 +67,11 @@ jsConfirm.init = function (className, settings) {
     document.body.onclick = function(e) {
         e =e || window.event;
         var target = e.target || e.srcElement;
-            
 
         // Listen to close modal
         if (jsConfirm._hasClass(target, "jsConfirmClose")) {
             jsConfirm._hide();
+            jsConfirm._preventDefault(e);
             return;
         }
         
@@ -84,6 +84,7 @@ jsConfirm.init = function (className, settings) {
         for (var modal in jsConfirm.settings) {
             if (jsConfirm._hasClass(target, modal)) {
                 jsConfirm._show(target, modal);
+                jsConfirm._preventDefault(e);
             }
         }
 
@@ -111,8 +112,10 @@ jsConfirm.init = function (className, settings) {
                 jsConfirm.settings[jsConfirm.window].callback(jsConfirm.target);                
                 jsConfirm._hide(); // Close modal window
             }
-
+    
+            jsConfirm._preventDefault(e);
         }
+
     };
 };
 

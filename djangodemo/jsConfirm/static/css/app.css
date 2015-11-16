@@ -626,7 +626,11 @@ footer .logo {
   -webkit-border-radius: 3rem;
   border-radius: 3rem;
 }
-/* line 44, ../../static_source/scss/web/_index.scss */
+/* line 45, ../../static_source/scss/web/_index.scss */
+#index .button:after {
+  display: none;
+}
+/* line 50, ../../static_source/scss/web/_index.scss */
 #index .button:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }
@@ -695,17 +699,43 @@ footer .logo {
   margin: 0.7rem 0;
 }
 /* line 87, ../../static_source/scss/web/_gallery.scss */
+#gallery .picture.liked .like {
+  background: #fff;
+}
+/* line 90, ../../static_source/scss/web/_gallery.scss */
+#gallery .picture.liked .like:before, #gallery .picture.liked .like:after {
+  background: #DF4545;
+}
+/* line 96, ../../static_source/scss/web/_gallery.scss */
+#gallery .picture.liked .like:hover:before, #gallery .picture.liked .like:hover:after {
+  left: 1.14rem;
+  height: 1rem;
+  width: 0.3rem;
+  top: 0.5rem;
+  -moz-transform-origin: 0;
+  -ms-transform-origin: 0;
+  -webkit-transform-origin: 0;
+  transform-origin: 0;
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -moz-border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  border-radius: 1rem;
+}
+/* line 112, ../../static_source/scss/web/_gallery.scss */
 #gallery .delete {
   font-size: 2.3rem;
   color: #C0C0C0;
 }
-/* line 91, ../../static_source/scss/web/_gallery.scss */
+/* line 116, ../../static_source/scss/web/_gallery.scss */
 #gallery .delete:hover {
   color: #fff;
   border-color: #4299D4;
   background: #DF4545;
 }
-/* line 104, ../../static_source/scss/web/_gallery.scss */
+/* line 129, ../../static_source/scss/web/_gallery.scss */
 #gallery .like {
   position: relative;
   margin-left: 0.8rem !important;
@@ -715,7 +745,7 @@ footer .logo {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
-/* line 110, ../../static_source/scss/web/_gallery.scss */
+/* line 135, ../../static_source/scss/web/_gallery.scss */
 #gallery .like:before, #gallery .like:after {
   position: absolute;
   content: "";
@@ -740,7 +770,7 @@ footer .logo {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
-/* line 125, ../../static_source/scss/web/_gallery.scss */
+/* line 150, ../../static_source/scss/web/_gallery.scss */
 #gallery .like:after {
   left: 0.6rem;
   -moz-transform: rotate(45deg);
@@ -752,12 +782,12 @@ footer .logo {
   -webkit-transform-origin: 100% 100%;
   transform-origin: 100% 100%;
 }
-/* line 131, ../../static_source/scss/web/_gallery.scss */
+/* line 156, ../../static_source/scss/web/_gallery.scss */
 #gallery .like:hover {
   background: #4299D4;
   border-color: #4299D4;
 }
-/* line 135, ../../static_source/scss/web/_gallery.scss */
+/* line 160, ../../static_source/scss/web/_gallery.scss */
 #gallery .like:hover:before, #gallery .like:hover:after {
   background: #fff;
 }
@@ -824,7 +854,7 @@ SOFTWARE.
 */
 /* line 38, ../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirmBackground {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   top: 0;
@@ -847,7 +877,7 @@ SOFTWARE.
 /* line 56, ../../static_source/scss/jsConfirm/_core.scss */
 #jsConfirm {
   font-family: "Proxima Nova", Helvetica, sans-serif;
-  position: absolute;
+  position: fixed;
   width: 90%;
   top: -30rem;
   background: #fff;
