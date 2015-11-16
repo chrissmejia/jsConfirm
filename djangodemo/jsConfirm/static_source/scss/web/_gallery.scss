@@ -77,7 +77,7 @@
                 height: 2.37rem;
                 @include single-transition(all, 0.5s);
                 @include border-radius(50%);
-                border: $gray 0.1rem solid;
+                border: $gray 1px solid; // Safari bug with rem and border
                 margin: 0.7rem 0;
 
             }
