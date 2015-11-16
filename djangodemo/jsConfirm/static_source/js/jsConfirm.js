@@ -84,7 +84,6 @@ jsConfirm._click = function(e) {
     
     // Listen only a elements
     if (target.nodeName !== 'A') {
-        jsConfirm._preventDefault(e);
         return;
     }
     
