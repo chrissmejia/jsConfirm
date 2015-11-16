@@ -25,7 +25,7 @@ This is the minimal setup:
        callback: customCallback
    });
 
-In this example ``delete`` it's the class asigned to the DOM elements to fire the modal and ``customCallback`` it's the function to call when the user click the proceed button, jsConfirm it's smart enogh to attach automatically the ``click event`` for you.
+In this example ``delete`` it's the class asigned to the DOM elements to fire the modal and ``customCallback`` it's the function to call when the user click the proceed button, jsConfirm it's smart enough to attach automatically the ``click event`` for you.
 
 =====================
 Changing default text
@@ -73,7 +73,7 @@ Please notice: you also need to follow the intructions to make ajax calls or to 
 Adding custom text for each element
 ===================================
 
-Set a custom message for each item it's easy after send the data, you only need to add the custom text ``{/name/}`` where name it's the data you wanna set in that place, e.g.:
+Set a custom message for each item it's easy after send the data, you only need to add the custom text ``{/name/}`` where ``name`` it's the data you wanna set in that place, e.g.:
 
 .. code-block:: html
 

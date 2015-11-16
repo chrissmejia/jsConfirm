@@ -21,7 +21,7 @@ It contains a little django app to test how it works in `TurboLinks <https://git
 Fake API
 ============
 
-With the app there's a fake API how always return the same objet to test the JSON responses.
+With the app there's a fake API how always return the same object to test the JSON responses.
 
 ============
 CSS
