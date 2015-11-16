@@ -31,7 +31,7 @@
 
   
     <link rel="top" title="jsConfirm 0.1 documentation" href="index.html"/>
-        <link rel="prev" title="Autogenerating JS" href="grunt.html"/> 
+        <link rel="prev" title="Framework" href="cssmodules.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -82,8 +82,11 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="start.html">Start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="compass.html">Autogenerating CSS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="grunt.html">Autogenerating JS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howitworks.html">How it works</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compass.html">CSS first steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="grunt.html">JS first steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jscomponent.html">JS the component</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cssmodules.html">Framework</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Framework</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#the-grid">The grid</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#mobile-first">Mobile first</a></li>
@@ -158,26 +161,27 @@
 <div class="section" id="media-queries">
 <h2>Media Queries<a class="headerlink" href="#media-queries" title="Permalink to this headline">¶</a></h2>
 <p>To make the life easier, the media queries are already set for you, and can be called like this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="nd">@media</span> <span class="c">#{$small-up} { }</span>
-<span class="nd">@media</span> <span class="c">#{$small-only} { }</span>
+<div class="highlight-css"><div class="highlight"><pre>@media #{$small-up} { }
+@media #{$small-only} { }
 
-<span class="nd">@media</span> <span class="c">#{$medium-up} { }</span>
-<span class="nd">@media</span> <span class="c">#{$medium-only} { }</span>
+@media #{$medium-up} { }
+@media #{$medium-only} { }
 
-<span class="nd">@media</span> <span class="c">#{$large-up} { }</span>
-<span class="nd">@media</span> <span class="c">#{$large-only} { }</span>
+@media #{$large-up} { }
+@media #{$large-only} { }
 
-<span class="nd">@media</span> <span class="c">#{$xlarge-up} { }</span>
-<span class="nd">@media</span> <span class="c">#{$xlarge-only} { }</span>
+@media #{$xlarge-up} { }
+@media #{$xlarge-only} { }
 
-<span class="nd">@media</span> <span class="c">#{$xxlarge-up} { }</span>
-<span class="nd">@media</span> <span class="c">#{$xxlarge-only} { }</span>
+@media #{$xxlarge-up} { }
+@media #{$xxlarge-only} { }
 </pre></div>
 </div>
 </div>
 <div class="section" id="transition-helper">
 <h2>Transition Helper<a class="headerlink" href="#transition-helper" title="Permalink to this headline">¶</a></h2>
 <p>This it&#8217;s a simple but powerfull weapon to make interfaces look nicer, just add the class <code class="docutils literal"><span class="pre">transition</span></code> and every change in the css it&#8217;s going to be distributed in 500ms.</p>
+<p>Ps: You can cancel the effect adding the class <code class="docutils literal"><span class="pre">notransition</span></code>.</p>
 </div>
 <div class="section" id="position-helpers">
 <h2>Position Helpers<a class="headerlink" href="#position-helpers" title="Permalink to this headline">¶</a></h2>
@@ -208,7 +212,7 @@
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="grunt.html" class="btn btn-neutral" title="Autogenerating JS" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="cssmodules.html" class="btn btn-neutral" title="Framework" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

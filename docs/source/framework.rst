@@ -26,7 +26,7 @@ Media Queries
 
 To make the life easier, the media queries are already set for you, and can be called like this:
 
-.. code-block:: python
+.. code-block:: css
 
    @media #{$small-up} { }
    @media #{$small-only} { }

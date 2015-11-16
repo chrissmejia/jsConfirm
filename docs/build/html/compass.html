@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Autogenerating CSS &mdash; jsConfirm 0.1 documentation</title>
+  <title>CSS first steps &mdash; jsConfirm 0.1 documentation</title>
   
 
   
@@ -31,8 +31,8 @@
 
   
     <link rel="top" title="jsConfirm 0.1 documentation" href="index.html"/>
-        <link rel="next" title="Autogenerating JS" href="grunt.html"/>
-        <link rel="prev" title="Start" href="start.html"/> 
+        <link rel="next" title="JS first steps" href="grunt.html"/>
+        <link rel="prev" title="How it works" href="howitworks.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -83,13 +83,21 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="start.html">Start</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Autogenerating CSS</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="howitworks.html">How it works</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">CSS first steps</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#quickstart">Quickstart</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#framework">Framework</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modules">Modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#framework">Framework</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#web-module">Web module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jsconfirm">jsConfirm</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="grunt.html">Autogenerating JS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="grunt.html">JS first steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jscomponent.html">JS the component</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cssmodules.html">Framework</a></li>
 <li class="toctree-l1"><a class="reference internal" href="framework.html">Framework</a></li>
 </ul>
 
@@ -121,7 +129,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Autogenerating CSS</li>
+    <li>CSS first steps</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -135,8 +143,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="autogenerating-css">
-<h1>Autogenerating CSS<a class="headerlink" href="#autogenerating-css" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="css-first-steps">
+<h1>CSS first steps<a class="headerlink" href="#css-first-steps" title="Permalink to this headline">¶</a></h1>
 <p>We use Compass to automatize and produce quality CSS</p>
 <div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
@@ -148,14 +156,29 @@
 <div class="section" id="quickstart">
 <h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Go to SASS repository folder <code class="docutils literal"><span class="pre">source</span></code></li>
+<li>Go to SASS repository folder <code class="docutils literal"><span class="pre">djangodemo/jsConfirm/static_source</span></code></li>
 <li>Run <code class="docutils literal"><span class="pre">compass</span> <span class="pre">watch</span></code></li>
 </ul>
-<p>Now everytime you make a change at the scss files a compressed version is going to be placed automatically at <code class="docutils literal"><span class="pre">public</span></code> folder.</p>
+<p>Now everytime you make a change at the scss files a compressed version is going to be placed automatically at <code class="docutils literal"><span class="pre">djangodemo/jsConfirm/static/css/</span></code> folder.</p>
 </div>
+<div class="section" id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
+<p>The CSS for this project and demo are divided in 3 modules, a reusable base framework, a web module with the specifics for the django demo and a self contained jsConfirm module.</p>
 <div class="section" id="framework">
-<h2>Framework<a class="headerlink" href="#framework" title="Permalink to this headline">¶</a></h2>
-<p>Under <code class="docutils literal"><span class="pre">/scss/framework</span></code> folder there&#8217;s a light reusable <a class="reference external" href="http://foundation.zurb.com">Foundation 5 compatible</a> css 12 columns grid, written specifically for this test.</p>
+<h3>Framework<a class="headerlink" href="#framework" title="Permalink to this headline">¶</a></h3>
+<p>Under <code class="docutils literal"><span class="pre">/scss/framework</span></code> folder there&#8217;s a light reusable <a class="reference external" href="http://foundation.zurb.com">Foundation 5 compatible</a> css 12 columns grid, written specifically for this test, it contains a responsive grid, position helpers and transitions.</p>
+<p><a class="reference external" href="framework.html">See framework specifics</a></p>
+</div>
+<div class="section" id="web-module">
+<h3>Web module<a class="headerlink" href="#web-module" title="Permalink to this headline">¶</a></h3>
+<p>Organized CSS for the django demo</p>
+<p><a class="reference external" href="webcss.html">See web module specifics</a></p>
+</div>
+<div class="section" id="jsconfirm">
+<h3>jsConfirm<a class="headerlink" href="#jsconfirm" title="Permalink to this headline">¶</a></h3>
+<p>The most important module it&#8217;s named jsConfirm and it&#8217;s special because it&#8217;s self contain, you don&#8217;t need the rest of the modules to use it.</p>
+<p><a class="reference external" href="jsConfirmCSS.html">See component css specifics</a></p>
+</div>
 </div>
 </div>
 
@@ -166,10 +189,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="grunt.html" class="btn btn-neutral float-right" title="Autogenerating JS" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="grunt.html" class="btn btn-neutral float-right" title="JS first steps" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="start.html" class="btn btn-neutral" title="Start" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="howitworks.html" class="btn btn-neutral" title="How it works" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

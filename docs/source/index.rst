@@ -12,8 +12,11 @@ Contents:
    :maxdepth: 2
 
    start
+   howitworks
    compass
    grunt
+   jscomponent
+   cssmodules
    framework
 
 
