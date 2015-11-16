@@ -55,68 +55,73 @@ jsConfirm.init = function (className, settings) {
 
     // Run only the first time
     if (!Object.keys(jsConfirm.settings).length) {
-
+        // Events
         window.addEventListener("resize", jsConfirm._resize, false);
+        document.body.addEventListener('click', jsConfirm._click, false);
     }
-    
+
     // Initializing element
     // Storing settings
     jsConfirm.settings[className] = settings;
     
-    // Events
-    document.body.onclick = function(e) {
-        e =e || window.event;
-        var target = e.target || e.srcElement;
+};
 
-        // Listen to close modal
-        if (jsConfirm._hasClass(target, "jsConfirmClose")) {
-            jsConfirm._hide();
-            jsConfirm._preventDefault(e);
-            return;
-        }
-        
-        // Listen only a elements
-        if (target.nodeName !== 'A') {
-            return;
-        }
-        
-        // Show window for any of the set it classNames
-        for (var modal in jsConfirm.settings) {
-            if (jsConfirm._hasClass(target, modal)) {
-                jsConfirm._show(target, modal);
-                jsConfirm._preventDefault(e);
-            }
-        }
+//------------------------------------------------------------------------------------------
+// onClick event
+//------------------------------------------------------------------------------------------
+jsConfirm._click = function(e) {
+    "use strict";
 
-        if (target.getAttribute('id') === "jsConfirmProceed") {
+    e = e || window.event;
+    var target = e.target || e.srcElement;
 
-            if (jsConfirm.settings[jsConfirm.window].url) { // Ajax request
-
-                var params = [];
-                var extra = jsConfirm.settings[jsConfirm.window].extra;
-                if (extra) {
-                    for (var key in extra) {
-                      if (extra.hasOwnProperty(key)) {
-                        params.push(key + "=" + extra[key]);
-                      }
-                    }
-                }
-
-                jsConfirm._postForm(
-                    jsConfirm.settings[jsConfirm.window].url,
-                    params,
-                    jsConfirm.settings[jsConfirm.window].callback,
-                    true
-                    );
-            } else {
-                jsConfirm.settings[jsConfirm.window].callback(jsConfirm.target);                
-                jsConfirm._hide(); // Close modal window
-            }
+    // Listen to close modal
+    if (jsConfirm._hasClass(target, "jsConfirmClose")) {
+        jsConfirm._hide();
+        jsConfirm._preventDefault(e);
+        return;
+    }
     
+    // Listen only a elements
+    if (target.nodeName !== 'A') {
+        jsConfirm._preventDefault(e);
+        return;
+    }
+    
+    // Show window for any of the set it classNames
+    for (var modal in jsConfirm.settings) {
+        if (jsConfirm._hasClass(target, modal)) {
+            jsConfirm._show(target, modal);
             jsConfirm._preventDefault(e);
         }
+    }
 
-    };
+    if (target.getAttribute('id') === "jsConfirmProceed") {
+        if (jsConfirm.settings[jsConfirm.window].url) { // Ajax request
+
+            var params = [];
+            var extra = jsConfirm.settings[jsConfirm.window].extra;
+            if (extra) {
+                for (var key in extra) {
+                  if (extra.hasOwnProperty(key)) {
+                    params.push(key + "=" + extra[key]);
+                  }
+                }
+            }
+
+            jsConfirm._postForm(
+                jsConfirm.settings[jsConfirm.window].url,
+                params,
+                jsConfirm.settings[jsConfirm.window].callback,
+                true
+                );
+        } else {
+            jsConfirm.settings[jsConfirm.window].callback(jsConfirm.target);                
+            jsConfirm._hide(); // Close modal window
+        }
+
+        jsConfirm._preventDefault(e);
+    }
 };
 
 
