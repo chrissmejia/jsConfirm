@@ -214,13 +214,13 @@ jsConfirm._createModal = function() {
     // Title
     var title = document.createElement("div");
     title.setAttribute("class", "title");
-    title.innerText = "Delete Image";
+    title.textContent = "Delete Image";
     modalWindow.appendChild(title);
 
     // Description
     var description = document.createElement("div");
     description.setAttribute("class", "description");
-    description.innerText = "Are you sure you want to delete it?";
+    description.textContent = "Are you sure you want to delete it?";
     modalWindow.appendChild(description);
 
     // Buttons
@@ -230,14 +230,14 @@ jsConfirm._createModal = function() {
     var cancel = document.createElement("a");
     cancel.setAttribute("class", "cancel jsConfirmClose");
     cancel.setAttribute("href", "#");
-    cancel.innerText = "Cancel";
+    cancel.textContent = "Cancel";
     buttons.appendChild(cancel);
 
     var proceed = document.createElement("a");
     proceed.setAttribute("id", "jsConfirmProceed");
     proceed.setAttribute("class", "proceed");
     proceed.setAttribute("href", "#");
-    proceed.innerText = "Delete file";
+    proceed.textContent = "Delete file";
     buttons.appendChild(proceed);
 
     modalWindow.appendChild(buttons);
@@ -489,7 +489,7 @@ jsConfirm._show = function (d, className) {
     // Setting title (Optional)
     if (jsConfirm.settings[className].title) {
         var title = jsConfirm._getChildByClass(modalWindow, "title");
-        title.innerText = jsConfirm.settings[className].title;
+        title.textContent = jsConfirm.settings[className].title;
     }
     // Setting text (Optional)
     if (jsConfirm.settings[className].text) {
@@ -507,13 +507,13 @@ jsConfirm._show = function (d, className) {
     // Setting cancelText (Optional)
     if (jsConfirm.settings[className].cancelText) {
         var cancelText = jsConfirm._getChildByClass(modalWindow, "cancel");
-        cancelText.innerText = jsConfirm.settings[className].cancelText;
+        cancelText.textContent = jsConfirm.settings[className].cancelText;
     }
 
     // Setting proceedText (Optional)
     if (jsConfirm.settings[className].proceedText) {
         var proceedText = jsConfirm._getChildByClass(modalWindow, "proceed");
-        proceedText.innerText = jsConfirm.settings[className].proceedText;
+        proceedText.textContent = jsConfirm.settings[className].proceedText;
     }
 
     jsConfirm.window = className;
