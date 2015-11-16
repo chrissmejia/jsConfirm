@@ -465,7 +465,7 @@ jsConfirm._startPosition = function (d, animate) {
     }
 
     jsConfirm._hCenter(d);
-    d.style.top = "-" + modalHeight + "px";
+    d.style.top = "-" + (modalHeight + 100) + "px"; // +100 because safari mobile has a bug
 
     if (!animate) {
         var forceReflow = d.offsetLeft + d.offsetTop; // Hack to fire DOM changes
