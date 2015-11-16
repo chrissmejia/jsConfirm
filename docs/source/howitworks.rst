@@ -25,7 +25,7 @@ This is the minimal setup:
        callback: customCallback
    });
 
-In this example ``delete`` it's the class asigned to the DOM elements to fire the modal and ``customCallback`` it's the function to call when the user click the proceed button.
+In this example ``delete`` it's the class asigned to the DOM elements to fire the modal and ``customCallback`` it's the function to call when the user click the proceed button, jsConfirm it's smart enogh to attach automatically the ``click event`` for you.
 
 =====================
 Changing default text

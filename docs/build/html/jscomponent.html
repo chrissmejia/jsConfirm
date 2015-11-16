@@ -31,7 +31,7 @@
 
   
     <link rel="top" title="jsConfirm 0.1 documentation" href="index.html"/>
-        <link rel="next" title="Framework" href="cssmodules.html"/>
+        <link rel="next" title="JS helpers" href="jshelpers.html"/>
         <link rel="prev" title="JS first steps" href="grunt.html"/> 
 
   
@@ -85,13 +85,15 @@
 <li class="toctree-l1"><a class="reference internal" href="start.html">Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="howitworks.html">How it works</a></li>
 <li class="toctree-l1"><a class="reference internal" href="compass.html">CSS first steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cssmodules.html">Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="framework.html">Framework</a></li>
 <li class="toctree-l1"><a class="reference internal" href="grunt.html">JS first steps</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">JS core</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#basics">Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#init">Init</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="cssmodules.html">Framework</a></li>
-<li class="toctree-l1"><a class="reference internal" href="framework.html">Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jshelpers.html">JS helpers</a></li>
 </ul>
 
             
@@ -139,7 +141,7 @@
   <div class="section" id="js-core">
 <h1>JS core<a class="headerlink" href="#js-core" title="Permalink to this headline">¶</a></h1>
 <p>This is a developer description of how the core component works.</p>
-<p>As you know javascript it&#8217;s a strong and fast language but suffers huge performance problems meanwhile it&#8217;s dealing with the DOM, this component it&#8217;s coded with an eye in performance that&#8217;s why hit the DOM just when it&#8217;s extremely need it.</p>
+<p>As you know javascript it&#8217;s a strong and fast language but suffers huge performance problems meanwhile it&#8217;s dealing with the DOM, this component it&#8217;s coded with an eye in performance, that&#8217;s why hit the DOM just when it&#8217;s extremely need it.</p>
 <div class="section" id="basics">
 <h2>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h2>
 <p>It contains a <code class="docutils literal"><span class="pre">name</span></code> and a <code class="docutils literal"><span class="pre">version</span></code> property just in case that you actually need it but don&#8217;t affect how the component works, the most important storage variables are:</p>
@@ -148,8 +150,22 @@
 <li><code class="docutils literal"><span class="pre">settings</span></code> keep track of the settings for each modal window.</li>
 <li><code class="docutils literal"><span class="pre">window</span></code> contains the type of the current open modal window.</li>
 <li><code class="docutils literal"><span class="pre">target</span></code> the reference of the DOM element making the current call.</li>
-<li><code class="docutils literal"><span class="pre">resized</span></code> it becomes true when the browser window resize and the modal window it&#8217;s not open, in that way don&#8217;t recalculate only when it&#8217;s need it.</li>
+<li><code class="docutils literal"><span class="pre">resized</span></code> it becomes true when the browser window resize and the modal window it&#8217;s not open, in that way don&#8217;t recalculate each time, only when it&#8217;s need it.</li>
 </ul>
+</div>
+<div class="section" id="init">
+<h2>Init<a class="headerlink" href="#init" title="Permalink to this headline">¶</a></h2>
+<p>The init function check the integrity of the data, saves the settings and attach a <code class="docutils literal"><span class="pre">resize</span></code> and a <code class="docutils literal"><span class="pre">click</span></code> event.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">className:</th><td class="field-body">Modal caller class</td>
+</tr>
+<tr class="field-even field"><th class="field-name">settings:</th><td class="field-body">Modal settings</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -160,7 +176,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="cssmodules.html" class="btn btn-neutral float-right" title="Framework" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="jshelpers.html" class="btn btn-neutral float-right" title="JS helpers" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="grunt.html" class="btn btn-neutral" title="JS first steps" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

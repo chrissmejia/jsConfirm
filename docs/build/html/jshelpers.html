@@ -1,0 +1,495 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>JS helpers &mdash; jsConfirm 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="jsConfirm 0.1 documentation" href="index.html"/>
+        <link rel="prev" title="JS core" href="jscomponent.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> jsConfirm
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howitworks.html">How it works</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compass.html">CSS first steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cssmodules.html">Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="framework.html">Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="grunt.html">JS first steps</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jscomponent.html">JS core</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">JS helpers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#click">_click</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#postform">_postForm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get">_get</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preparemodal">_prepareModal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#createmodal">_createModal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#visible">_visible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#resize">_resize</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recalculate">_recalculate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preventdefault">_preventDefault</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#removeclass">_removeClass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#addclass">_addClass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hasclass">_hasClass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getchildbyclass">_getChildByClass</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getchildbyclasses">_getChildByClasses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#windowwidth">_windowWidth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#windowheight">_windowHeight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modalwidth">_modalWidth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modalheight">_modalHeight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hcenter">_hCenter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#vcenter">_vCenter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#center">_center</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#startposition">_startPosition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#show">_show</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hide">_hide</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">jsConfirm</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>JS helpers</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/jshelpers.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="js-helpers">
+<h1>JS helpers<a class="headerlink" href="#js-helpers" title="Permalink to this headline">¶</a></h1>
+<p>This is a developer description of how the helpers works.</p>
+<p>The helpers are &#8220;private&#8221; functions to split how the component works in a better, modular and cleaner way.</p>
+<p>In convention, the helpers start with <code class="docutils literal"><span class="pre">_</span></code>, e.g.: <code class="docutils literal"><span class="pre">jsConfirm._postForm</span></code>.</p>
+<p>jsConfirm avoid the use of <code class="docutils literal"><span class="pre">Closures</span></code> for performance reasons, for more, please see: <a class="reference external" href="http://shop.oreilly.com/product/9780596802806.do">High Performance JavaScript</a></p>
+<div class="section" id="click">
+<h2>_click<a class="headerlink" href="#click" title="Permalink to this headline">¶</a></h2>
+<p>It&#8217;s the event attached to the <code class="docutils literal"><span class="pre">click</span> <span class="pre">event</span></code>, it&#8217;s an unique event that launch the modals, fire the ajax call or the <code class="docutils literal"><span class="pre">callback</span></code> and close the modal (For performance).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">e:</th><td class="field-body">Event</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="postform">
+<h2>_postForm<a class="headerlink" href="#postform" title="Permalink to this headline">¶</a></h2>
+<p>This function makes the ajax call, retry if it fails and call the <code class="docutils literal"><span class="pre">callback</span></code> with the data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">url:</th><td class="field-body">URL to send the call</td>
+</tr>
+<tr class="field-even field"><th class="field-name">params:</th><td class="field-body">Data to send</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">callback:</th><td class="field-body">Callback</td>
+</tr>
+<tr class="field-even field"><th class="field-name">retry:</th><td class="field-body">If it&#8217;s true, and it fails, then retry</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="get">
+<h2>_get<a class="headerlink" href="#get" title="Permalink to this headline">¶</a></h2>
+<p>This is the cache factory, it store the calculated values the first time they are need it, after that it return the precalculated value avoiding to hit the DOM at least you force it.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">name:</th><td class="field-body">Variable name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">getFn:</th><td class="field-body">Function to calculate</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">force:</th><td class="field-body">Discard cache</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="preparemodal">
+<h2>_prepareModal<a class="headerlink" href="#preparemodal" title="Permalink to this headline">¶</a></h2>
+<p>If the modal window don&#8217;t exists then it call <code class="docutils literal"><span class="pre">_createModal</span></code>, after that, see if the windows have been resized, if it does then call <code class="docutils literal"><span class="pre">_recalculate</span></code> and at the end call <code class="docutils literal"><span class="pre">_startPosition</span></code> to place the window at the rignt place.</p>
+</div>
+<div class="section" id="createmodal">
+<h2>_createModal<a class="headerlink" href="#createmodal" title="Permalink to this headline">¶</a></h2>
+<p>Create the modal window in a verbose way following ECMAScript standard.</p>
+<p>Please notice: ECMAScript way it&#8217;s slower than innerHTML in old browsers (1.17x times slower in Firefox 3.5) and faster in new WebKit browsers (1.15x times faster in Chrome 3), it&#8217;s the same for Opera 10.</p>
+</div>
+<div class="section" id="visible">
+<h2>_visible<a class="headerlink" href="#visible" title="Permalink to this headline">¶</a></h2>
+<p>Return <code class="docutils literal"><span class="pre">true</span></code> if the modal window it&#8217;s visible without touch the DOM</p>
+</div>
+<div class="section" id="resize">
+<h2>_resize<a class="headerlink" href="#resize" title="Permalink to this headline">¶</a></h2>
+<p>It&#8217;s the event attached to the <code class="docutils literal"><span class="pre">resize</span> <span class="pre">event</span></code>, if the modal window is visible then call <code class="docutils literal"><span class="pre">_recalculate</span></code> and <code class="docutils literal"><span class="pre">_center</span></code> to place in the right place inmediatly, if it&#8217;s not then set <code class="docutils literal"><span class="pre">resized</span></code> to <code class="docutils literal"><span class="pre">true</span></code> and the recalculation will be executed only when they are need it.</p>
+</div>
+<div class="section" id="recalculate">
+<h2>_recalculate<a class="headerlink" href="#recalculate" title="Permalink to this headline">¶</a></h2>
+<p>Recalculate the DOM</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">d:</th><td class="field-body">Modal window</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="preventdefault">
+<h2>_preventDefault<a class="headerlink" href="#preventdefault" title="Permalink to this headline">¶</a></h2>
+<p>x-browser prevent default action and cancel bubbling</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">e:</th><td class="field-body">Event</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="removeclass">
+<h2>_removeClass<a class="headerlink" href="#removeclass" title="Permalink to this headline">¶</a></h2>
+<p>Remove a class from a dom object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">d:</th><td class="field-body">DOM element</td>
+</tr>
+<tr class="field-even field"><th class="field-name">className:</th><td class="field-body">Class to remove</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="addclass">
+<h2>_addClass<a class="headerlink" href="#addclass" title="Permalink to this headline">¶</a></h2>
+<p>Add a class from a dom object</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">d:</th><td class="field-body">DOM element</td>
+</tr>
+<tr class="field-even field"><th class="field-name">className:</th><td class="field-body">Class to add</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="hasclass">
+<h2>_hasClass<a class="headerlink" href="#hasclass" title="Permalink to this headline">¶</a></h2>
+<p>Check if an element has a class</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">d:</th><td class="field-body">DOM element</td>
+</tr>
+<tr class="field-even field"><th class="field-name">className:</th><td class="field-body">Class to check</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="getchildbyclass">
+<h2>_getChildByClass<a class="headerlink" href="#getchildbyclass" title="Permalink to this headline">¶</a></h2>
+<p>Get a child element using a class</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">d:</th><td class="field-body">DOM element</td>
+</tr>
+<tr class="field-even field"><th class="field-name">className:</th><td class="field-body">Class to get</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="getchildbyclasses">
+<h2>_getChildByClasses<a class="headerlink" href="#getchildbyclasses" title="Permalink to this headline">¶</a></h2>
+<p>Get a child element using more than one classes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">d:</th><td class="field-body">DOM element</td>
+</tr>
+<tr class="field-even field"><th class="field-name">classNames:</th><td class="field-body">Classes to get</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="windowwidth">
+<h2>_windowWidth<a class="headerlink" href="#windowwidth" title="Permalink to this headline">¶</a></h2>
+<p>Get the window width</p>
+</div>
+<div class="section" id="windowheight">
+<h2>_windowHeight<a class="headerlink" href="#windowheight" title="Permalink to this headline">¶</a></h2>
+<p>Get the window height</p>
+</div>
+<div class="section" id="modalwidth">
+<h2>_modalWidth<a class="headerlink" href="#modalwidth" title="Permalink to this headline">¶</a></h2>
+<p>Get the modal window width</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">d:</th><td class="field-body">Modal window</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="modalheight">
+<h2>_modalHeight<a class="headerlink" href="#modalheight" title="Permalink to this headline">¶</a></h2>
+<p>Get the modal window height</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">d:</th><td class="field-body">Modal window</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="hcenter">
+<h2>_hCenter<a class="headerlink" href="#hcenter" title="Permalink to this headline">¶</a></h2>
+<p>Center the modal in x axys</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">d:</th><td class="field-body">Modal window</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="vcenter">
+<h2>_vCenter<a class="headerlink" href="#vcenter" title="Permalink to this headline">¶</a></h2>
+<p>Center the modal in y axys</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">d:</th><td class="field-body">Modal window</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="center">
+<h2>_center<a class="headerlink" href="#center" title="Permalink to this headline">¶</a></h2>
+<p>Center the modal in the screen</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">d:</th><td class="field-body">Modal window</td>
+</tr>
+<tr class="field-even field"><th class="field-name">animate:</th><td class="field-body">If it&#8217;s <code class="docutils literal"><span class="pre">false</span></code> then move the window inmediatly</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="startposition">
+<h2>_startPosition<a class="headerlink" href="#startposition" title="Permalink to this headline">¶</a></h2>
+<p>Move the modal window to his start position</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">d:</th><td class="field-body">Modal window</td>
+</tr>
+<tr class="field-even field"><th class="field-name">animate:</th><td class="field-body">If it&#8217;s <code class="docutils literal"><span class="pre">false</span></code> then move the window inmediatly</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="show">
+<h2>_show<a class="headerlink" href="#show" title="Permalink to this headline">¶</a></h2>
+<p>Call <code class="docutils literal"><span class="pre">_prepareModal</span></code> to get all set, set the custom text for the element and show the modal calling <code class="docutils literal"><span class="pre">_vCenter</span></code>, in the process set <code class="docutils literal"><span class="pre">window</span></code> and <code class="docutils literal"><span class="pre">target</span></code> to keep track of what&#8217;s happening without hit the DOM.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">d:</th><td class="field-body">Modal caller element</td>
+</tr>
+<tr class="field-even field"><th class="field-name">className:</th><td class="field-body">Modal caller class</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="hide">
+<h2>_hide<a class="headerlink" href="#hide" title="Permalink to this headline">¶</a></h2>
+<p>Hide the modal window, and clear <code class="docutils literal"><span class="pre">window</span></code> and <code class="docutils literal"><span class="pre">target</span></code>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="jscomponent.html" class="btn btn-neutral" title="JS core" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Chriss Mejía.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

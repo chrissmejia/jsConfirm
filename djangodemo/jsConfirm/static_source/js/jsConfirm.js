@@ -178,7 +178,7 @@ jsConfirm._get = function(name, getFn, force) {
 //------------------------------------------------------------------------------------------
 // Create the modal if don't exists and place in the right position
 //------------------------------------------------------------------------------------------
-jsConfirm._prepareModal= function() {
+jsConfirm._prepareModal = function() {
     "use strict";
 
     var modalWindow = document.getElementById("jsConfirm"); // DOM object
@@ -199,7 +199,7 @@ jsConfirm._prepareModal= function() {
 //------------------------------------------------------------------------------------------
 // Create the modal
 //------------------------------------------------------------------------------------------
-jsConfirm._createModal= function() {
+jsConfirm._createModal = function() {
     "use strict";
 
     // Core

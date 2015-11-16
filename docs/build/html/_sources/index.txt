@@ -14,10 +14,11 @@ Contents:
    start
    howitworks
    compass
-   grunt
-   jscomponent
    cssmodules
    framework
+   grunt
+   jscomponent
+   jshelpers
 
 
 Indices and tables
