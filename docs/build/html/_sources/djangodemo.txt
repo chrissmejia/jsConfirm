@@ -27,7 +27,7 @@ With the app there's a fake API how always return the same object to test the JS
 CSS
 ============
 
-The demo uses 2 CSS modules, a light reusable and reusable `framework <framework.html>`_ and it's own specific.
+The demo uses 2 CSS extra modules, a light reusable and reusable `framework <framework.html>`_ and it's own specific.
 
 ============
 JS
