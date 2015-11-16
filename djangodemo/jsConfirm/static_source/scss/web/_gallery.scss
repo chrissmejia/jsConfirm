@@ -104,6 +104,10 @@
                     @include border-radius(1rem);
                 }
 
+                &:before {
+                    opacity: 0;
+                }
+
             }
         }
 
@@ -154,12 +158,11 @@
         }
 
         &:hover {
-            background: $index-color;
-            border-color: $index-color;
+            background: $white;
 
             &:before,
             &:after {
-                background: $white;
+                background: $red;
             }
         }
     }
